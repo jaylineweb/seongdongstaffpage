@@ -1,0 +1,992 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="title" content="직원페이지" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="/common/css/font.css" />
+    <link rel="stylesheet" href="/common/css/default.css" />
+    <link rel="stylesheet" href="/site/staff/css/common.css" />
+    <link rel="stylesheet" href="/site/staff/css/program.css" />
+    <!--[if lt IE 9]><script src="/common/js/html5.js"></script><![endif]-->
+    <script src="/common/js/jquery-1.12.4.HS-20200709.min.js"></script>
+    <title>직원페이지</title>
+</head>
+<body class="staff">
+<header class="header">
+    <div class="wrap clearfix">
+        <h1 class="header__logo">프로그램 관리</h1>
+        <div class="header__title">
+            <!-- $page-heading-->
+        </div>
+        <div class="gnb">
+            <span class="gnb__name">관리자</span>님
+            <a href="/logout.do?mode=LOGIN&amp;rurl=/staff/index.do" class="gnb__logout" title="로그아웃">로그아웃 </a>
+        </div>
+    </div>
+</header>
+<div class="menu-list-wrap">
+    <h2 class="skip">주메뉴</h2>
+    <nav class="menu-list"  data-spy="affix" data-offset-top="0" data-longer="true" data-addaffix =".menu-list-wrap">
+
+
+
+
+
+
+<div class="menu-list-wrap">
+    <h2 class="skip">주메뉴</h2>
+    <nav class="menu-list"  data-spy="affix" data-offset-top="0" data-longer="true" data-addaffix =".menu-list-wrap">
+
+            <ul>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectLectureGroupList.do?key=742" class="menu-list__link" target="_self">강좌관리</a>
+
+            <ul class="submenu-list">
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLectureGroupList.do?key=742" class="submenu-list__link" target="_self">강좌그룹</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLectureList.do?key=743" class="submenu-list__link" target="_self">강좌목록</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrLectureAllInOneForm.do?key=759" class="submenu-list__link" title="새창" target="_blank">강좌접수</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectMngrCnclReqList.do?key=745" class="menu-list__link" target="_self">현황관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrCnclReqList.do?key=745" class="submenu-list__link" target="_self">가상계좌/무통장 취소현황</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrRefundList.do?key=746" class="submenu-list__link" target="_self">환불자명단</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrDayPayList.do?key=747" class="submenu-list__link" target="_self">일일결제내역</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEtcList.do?key=751" class="menu-list__link" target="_self">기타수입관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectEtcList.do?key=751" class="submenu-list__link" target="_self">기타수입관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectEtcPaymentList.do?key=762" class="submenu-list__link" target="_self">기타수입현황</a>
+
+                        <ul>
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectEtcPaymentList.do?key=762" class="submenu-list__link" target="_self">결제내역</a>
+                                </li>
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectEtcReceiptList.do?key=763" class="submenu-list__link" target="_self">현황</a>
+                                </li>
+
+
+
+
+
+
+            </ul>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectLockerList.do?key=754" class="menu-list__link" target="_self">사물함대여관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerList.do?key=754" class="submenu-list__link" target="_self">사물함관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerRentalList.do?key=755" class="submenu-list__link" target="_self">사물함대여현황</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerPaymentList.do?key=765" class="submenu-list__link" target="_self">사물함결제내역</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectDiscountUserList.do?key=758" class="menu-list__link" target="_self">감면대상관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectDiscountUserList.do?key=758" class="submenu-list__link" target="_self">감면대상관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectDiscountRateList.do?key=760" class="submenu-list__link" target="_self">감면코드관리</a>
+
+                        <ul>
+
+
+
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectDiscountRateList.do?key=760" class="submenu-list__link" target="_self">감면코드관리</a>
+                                </li>
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectDiscountBaseList.do?key=761" class="submenu-list__link" target="_self">감면유형관리</a>
+                                </li>
+
+
+            </ul>
+
+        </li>
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item active">
+        <a href="/staff/selectLecturerList.do?key=740" class="menu-list__link" target="_self">강사관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLecturerList.do?key=740" class="submenu-list__link" target="_self">강사목록</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item active">
+                    <a href="/staff/selectMngrEducatorFeeList.do?key=741" class="submenu-list__link" target="_self">강사료</a>
+
+        </li>
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEduPlaceList.do?key=748" class="menu-list__link" target="_self">교육장관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEduAgencyList.do?key=749" class="menu-list__link" target="_self">기관관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectQestnarMngList.do?key=57" class="menu-list__link" target="_self">설문조사관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectBbsMngList.do?key=51" class="menu-list__link" target="_self">게시판관리</a>
+
+        </li>
+
+        </ul>
+
+    </nav>
+    <!-- //lnb -->
+</div>
+
+    </nav>
+    <!-- //lnb -->
+</div>
+
+<div id="container">
+    <div class="wrap clearfix">
+        <main class="main">
+            <article>
+                <h2 class="contents-title">강사료</h2>
+                <div class="contents">
+                    <div class="p-wrap">
+                        <div class="row p-relative">
+                        </div>
+                        <p class="table_unit">* 표시는 필수입력 항목입니다.</p>
+                        <table class="p-table p-table--bordered">
+                            <colgroup>
+                                <col style="width:17%;">
+                                <col style="width:83%">
+                            </colgroup>
+                            <tbody class="text_center">
+                                <tr>
+                                    <th scope="row"><label for="courseType">강좌 구분</label></th>
+                                    <td class="text_left">
+                                        <select name="" class="p-input p-input--auto w20p" id="courseType">
+                                            <option value="">선택</option>
+                                            <option value="">강좌분류</option>
+                                            <option value="">대분류</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="cousrseField">강좌 분야</label></th>
+                                    <td class="text_left">
+                                        <select name="" class="p-input p-input--auto w20p" id="cousrseField">
+                                            <option value="">선택</option>
+                                            <option value="">강좌 분야</option>
+                                            <option value="">중분류</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="courseName">강좌명</label></th>
+                                    <td class="text_left">
+                                        <input type="text" class="p-input w85p" id="courseName">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="courseTarget">강좌 대상</label></th>
+                                    <td class="text_left">
+                                        <input type="text" class="p-input w85p" id="courseTarget">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="educationInstitution">교육 기관</label></th>
+                                    <td class="text_left">
+                                        <select name="" class="p-input p-input--auto w20p" id="educationInstitution">
+                                            <option value="">선택</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="educationLocation">교육 장소</label></th>
+                                    <td class="text_left">
+                                        <select name="" class="p-input p-input--auto w20p" id="educationLocation">
+                                            <option value="">선택</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="firstCome">선별 방법</label></th>
+                                    <td class="text_left">
+                                        <span class="p-form-radio p-form-checkbox--single">
+                                            <input type="radio" id="firstCome" class="p-form-radio__input" name="selectionMethod">
+                                            <label for="firstCome" class="p-form-radio__label" style="padding-right:60px;"><span style="min-width:65px;">선착순</span></label>
+                                        </span>
+                                        <span class="p-form-radio p-form-checkbox--single" style="margin-left:20px;">
+                                            <input type="radio" id="lottery" class="p-form-radio__input" name="selectionMethod">
+                                            <label for="lottery" class="p-form-radio__label" style="padding-right:60px;"><span style="min-width:65px;">추첨</span></label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="taxIncluded">과세 설정</label></th>
+                                    <td class="text_left">
+                                        <span class="p-form-radio p-form-checkbox--single">
+                                            <input type="radio" id="taxIncluded" class="p-form-radio__input" name="taxSetting">
+                                            <label for="taxIncluded" class="p-form-radio__label" style="padding-right:60px;">
+                                                <span style="min-width:65px;">과세</span>
+                                            </label>
+                                        </span>
+                                        <span class="p-form-radio p-form-checkbox--single" style="margin-left:20px;">
+                                            <input type="radio" id="tax-excluded" class="p-form-radio__input" name="taxSetting">
+                                            <label for="tax-excluded" class="p-form-radio__label" style="padding-right:60px;">
+                                                <span style="min-width:65px;">비과세</span>
+                                            </label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="totalRecruits">총 모집인원</label></th>
+                                    <td class="text_left">
+                                        <input type="text" class="p-input w15p" id="totalRecruits"><em class="margin_l_10">명</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="SelectAll">강의 시간</label></th>
+                                    <td class="text_left">
+                                        <div class="include-checkboxes checkboxEl day" style="display: inline-block;">
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" name="SelectAll" id="SelectAll" class="p-form-checkbox__input" onclick="selectAllCheckbox()">
+                                                <label for="SelectAll" class="p-form-checkbox__label">전체</label>
+                                            </span>
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" id="monday" name="ItemSelect" class="p-form-checkbox__input" onclick="itemCheckboxes()">
+                                                <label for="monday" class="p-form-checkbox__label"><span>월요일</span></label>
+                                            </span>
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" id="tuesday" name="ItemSelect" class="p-form-checkbox__input" onclick="itemCheckboxes()">
+                                                <label for="tuesday" class="p-form-checkbox__label"><span>화요일</span></label>
+                                            </span>
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" id="wednesday" name="ItemSelect" class="p-form-checkbox__input" onclick="itemCheckboxes()">
+                                                <label for="wednesday" class="p-form-checkbox__label"><span>수요일</span></label>
+                                            </span>
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" id="thursday" name="ItemSelect" class="p-form-checkbox__input" onclick="itemCheckboxes()">
+                                                <label for="thursday" class="p-form-checkbox__label"><span>목요일</span></label>
+                                            </span>
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" id="friday" name="ItemSelect" class="p-form-checkbox__input" onclick="itemCheckboxes()">
+                                                <label for="friday" class="p-form-checkbox__label"><span>금요일</span></label>
+                                            </span>
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" id="saturday" name="ItemSelect" class="p-form-checkbox__input" onclick="itemCheckboxes()">
+                                                <label for="saturday" class="p-form-checkbox__label"><span>토요일</span></label>
+                                            </span>
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" id="sunday" name="ItemSelect" class="p-form-checkbox__input" onclick="itemCheckboxes()">
+                                                <label for="sunday" class="p-form-checkbox__label"><span>일요일</span></label>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <select name="startHour" class="p-input p-input--auto w5p margin_r_5" id="startHour">
+                                                <option value="">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                            </select>
+                                            <span>시</span>
+                                            <select name="startMinute" class="p-input p-input--auto w5p margin_l_5" id="startMinute">
+                                                <option value="">00</option>
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                            </select>
+                                            <span>분 부터</span>
+                                            <select name="endHour" class="p-input p-input--auto w5p margin_r_5" id="endHour">
+                                                <option value="">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                            </select>
+                                            <span>시</span>
+                                            <select name="endMinute" class="p-input p-input--auto w5p margin_l_5" id="endMinute">
+                                                <option value="">00</option>
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                            </select>
+                                            <span>분 까지</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="col"><label for="search-input">강사명</label></th>
+                                    <td class="text_left">
+                                        <div class="input-container">
+                                            <div class="search-form">
+                                                <form action="" name="search-form">
+                                                    <input type="text" class="p-input p-input--auto width140px" id="search-input">
+                                                    <button type="submit" class="p-button p-button--icon search">검색</button>
+                                                </form>
+                                            </div>
+                                            <div class="info-fields">
+                                                <span class="payment-rate">기본강좌 강사료 지급비율
+                                                    <input type="text" class="p-input p-input--auto width50px"> %(원)
+                                                </span>
+                                                <span class="monthly-sessions">기본강좌 월 수강 횟수
+                                                    <input type="text" class="p-input p-input--auto width50px">
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="note-container">
+                                            <em class="em_blue">※ 100이하 입력(%) : 실수입 x 비율, 100초과 입력(원) : 월 수강횟수 x 금액</em>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="courseNature">강좌 성격</label></th>
+                                    <td class="text_left">
+                                        <select name="courseNature" class="p-input p-input--auto w20p" id="courseNature">
+                                            <option value="">선택</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="registrationMethod">접수 방법</label></th>
+                                    <td class="text_left">
+                                        <div class="">
+                                            <span class="p-form-radio p-form-checkbox--single">
+                                                <input type="radio" id="registrationMethod" class="p-form-radio__input" name="registrationMethod">
+                                                <label for="registrationMethod" class="p-form-radio__label" style="padding-right:88px;"><span style="width:85px;">온라인 + 방문</span></label>
+                                            </span>
+                                            <span class="p-form-radio p-form-checkbox--single" style="margin-left:20px;">
+                                                <input type="radio" id="visit" class="p-form-radio__input" name="registrationMethod">
+                                                <label for="visit" class="p-form-radio__label" style="padding-right:60px;"><span style="min-width:65px;">방문</span></label>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="openingUnit">개설 단위</label></th>
+                                    <td class="text_left">
+                                        <select name="openingUnit" class="p-input p-input--auto w20p" id="openingUnit">
+                                            <option value="">선택</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="col"><label for="lectureSyllabus">강의 계획서</label></th>
+                                    <td>
+                                        <textarea name="lectureSyllabus" id="lectureSyllabus" class="p-input"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="upload1">강의 계획서 첨부파일</label></th>
+                                    <td>
+                                        <div class="p-upload w30p">
+                                            <div class="p-form-group">
+                                                <div class="p-input__addon">
+                                                    <label for="upload1" class="p-button p-button--small primary" data-button="upload" data-parent=".p-upload" data-original="#upload1" data-showfilename="#filename_upload1"><span class="skip">1번째 </span>파일선택</label>
+                                                </div>
+                                                <div class="p-form-group__upload">
+                                                    <input type="file" name="upload" id="upload1" class="p-upload__file--hidden" title="첨부파일 1번째 파일첨부" style="display: none;">
+                                                    <span id="filename_upload1" class="p-input disabled input_text">선택된 파일 없음</span>
+                                                    <button type="button" class="p-upload__clear clear">선택한 1번 첨부 제거</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="upload2">강의 계획서 이미지1</label></th>
+                                    <td>
+                                        <div class="p-upload w30p">
+                                            <div class="p-form-group">
+                                                <div class="p-input__addon">
+                                                    <label for="upload2" class="p-button p-button--small primary" data-button="upload" data-parent=".p-upload" data-original="#upload2" data-showfilename="#filename_upload2"><span class="skip">1번째 </span>파일선택</label>
+                                                </div>
+                                                <div class="p-form-group__upload">
+                                                    <input type="file" name="upload" id="upload2" class="p-upload__file--hidden" title="첨부파일 1번째 파일첨부" style="display: none;">
+                                                    <span id="filename_upload2" class="p-input disabled input_text">선택된 파일 없음</span>
+                                                    <button type="button" class="p-upload__clear clear">선택한 1번 첨부 제거</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="upload3">강의 계획서 이미지1</label></th>
+                                    <td>
+                                        <div class="p-upload w30p">
+                                            <div class="p-form-group">
+                                                <div class="p-input__addon">
+                                                    <label for="upload3" class="p-button p-button--small primary" data-button="upload" data-parent=".p-upload" data-original="#upload3" data-showfilename="#filename_upload3"><span class="skip">1번째 </span>파일선택</label>
+                                                </div>
+                                                <div class="p-form-group__upload">
+                                                    <input type="file" name="upload" id="upload3" class="p-upload__file--hidden" title="첨부파일 1번째 파일첨부" style="display: none;">
+                                                    <span id="filename_upload3" class="p-input disabled input_text">선택된 파일 없음</span>
+                                                    <button type="button" class="p-upload__clear clear">선택한 1번 첨부 제거</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="upload4">강의 계획서 이미지2</label></th>
+                                    <td>
+                                        <div class="p-upload w30p">
+                                            <div class="p-form-group">
+                                                <div class="p-input__addon">
+                                                    <label for="upload4" class="p-button p-button--small primary" data-button="upload" data-parent=".p-upload" data-original="#upload4" data-showfilename="#filename_upload4"><span class="skip">1번째 </span>파일선택</label>
+                                                </div>
+                                                <div class="p-form-group__upload">
+                                                    <input type="file" name="upload" id="upload4" class="p-upload__file--hidden" title="첨부파일 1번째 파일첨부" style="display: none;">
+                                                    <span id="filename_upload4" class="p-input disabled input_text">선택된 파일 없음</span>
+                                                    <button type="button" class="p-upload__clear clear">선택한 1번 첨부 제거</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><label for="upload5">강의 계획서 이미지3</label></th>
+                                    <td>
+                                        <div class="p-upload w30p">
+                                            <div class="p-form-group">
+                                                <div class="p-input__addon">
+                                                    <label for="upload5" class="p-button p-button--small primary" data-button="upload" data-parent=".p-upload" data-original="#upload5" data-showfilename="#filename_upload5"><span class="skip">1번째 </span>파일선택</label>
+                                                </div>
+                                                <div class="p-form-group__upload">
+                                                    <input type="file" name="upload" id="upload5" class="p-upload__file--hidden" title="첨부파일 1번째 파일첨부" style="display: none;">
+                                                    <span id="filename_upload5" class="p-input disabled input_text">선택된 파일 없음</span>
+                                                    <button type="button" class="p-upload__clear clear">선택한 1번 첨부 제거</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script>
+                            /*전체 선택 checkbox*/
+                            function selectAllCheckbox() {
+                                var selectAllCheckbox = document.getElementById('SelectAll'); //ID값:SelectAll
+                                var itemCheckboxes = document.querySelectorAll("input[name='ItemSelect']"); //name값:ItemSelect
+                                itemCheckboxes.forEach(checkbox => { // 각 checkbox에 대해 반복
+                                    checkbox.checked = selectAllCheckbox.checked; // 전체 선택 checkbox의 체크 상태에 따라 각 item checkbox의 체크 상태를 설정
+                                });
+                            }
+
+                            function itemCheckboxes() {
+                                var selectAllCheckbox = document.getElementById('SelectAll'); // ID가 'SelectAll'인 checkbox 요소를 가져오기
+                                var itemCheckboxes = document.querySelectorAll("input[name='ItemSelect']"); // name이 'ItemSelect'인 모든 checkbox 요소를 NodeList로 뽑아내기
+                                var total = itemCheckboxes.length; // 전체 checkbox의 개수를 가져오기
+                                var checked = document.querySelectorAll("input[name='ItemSelect']:checked").length; // 체크된 checkbox의 개수를 가져오기
+                                selectAllCheckbox.checked = (total === checked); // 전체 checkbox의 개수와 체크된 checkbox의 개수가 같으면 전체 선택 checkbox를 체크
+                                // 그렇지 않으면 체크 해제
+                            }
+                            $(document).ready(function(){
+                                // 파일 선택 시 파일 이름을 표시
+                                $(":file[id^='upload']").on('change', function() {
+                                    var did = $(this).attr('id'); // 파일 입력의 ID
+                                    var filename = $(this).val().split('\\').pop(); // 파일 경로에서 파일 이름만 추출
+
+                                    if (filename) {
+                                        $('#filename_' + did).text(filename); // 파일 이름을 해당 span에 표시
+                                    } else {
+                                        $('#filename_' + did).text("선택된 파일 없음"); // 파일이 선택되지 않았을 경우
+                                    }
+                                });
+
+                                // 체크박스 변경 시 파일 입력 초기화
+                                $("input:checkbox[id^='dupload']").on('change', function() {
+                                    var fid = $(this).attr('id').substring(1); // 체크박스 ID에서 'd' 제거
+                                    if (!$(this).is(':checked')) {
+                                        $('#' + fid).val(""); // 체크 해제 시 파일 입력 초기화
+                                        $('#filename_' + fid).text("선택된 파일 없음"); // 파일 이름 초기화
+                                    }
+                                });
+                            });
+                        </script>
+                        <div class="p-wrap margin_t_20">
+                            <div class="row p-relative">
+                                <div class="col-24 center">
+                                    <input class="p-button write" type="submit" value="저장">
+                                    <input class="p-button delete" type="submit" value="취소">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+
+                        function fnSearch(){
+                            var frmData = document.searchForm ;
+                            frmData.action = "./selectMngrEducatorFeeList.do?key=741";
+                            frmData.method="get";
+                            frmData.submit() ;
+                        }
+
+                        function fnExcelDownload(basicCode){
+                            var frmData = document.searchForm ;
+                            frmData.action = "./selectMngrEducatorFeeExcelList.do?key=741";
+                            frmData.method="get";
+                            frmData.submit() ;
+                        }
+                    </script>
+                </div>
+                <!-- //contents -->
+            </article>
+        </main>
+
+    </div>
+    <!-- //wrap -->
+</div>
+<!-- //container -->
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer_info">
+            <p>Copyright ⓒ 2005-2016 HANSHINIT. All RIGHTS RESERVED</p>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+
+<script src="/site/staff/js/script.js"></script>
+<script src="/common/js/program.js"></script>
+
+</body>
+</html>

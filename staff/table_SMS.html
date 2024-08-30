@@ -1,0 +1,48 @@
+<div class="modal__backdrop modal__open" data-modal-type="SMS">
+    <div class="modal active" style="display:block;">
+        <div class="modal__body SMS">
+            <div class="modal__header">
+                <h4 class="modal__title">SMS 발송</h4>
+                <div class="modal__close">
+                    <button type="button" class="modal__close-button"><span>닫기</span></button>
+                </div>
+            </div>
+            <div class="modal__content">
+                <ul class="bu">
+                    <li>결제자가 아닌 수강자 명단에 등록된 수강자 번호로 문자가 전송됩니다</li>
+                    <li>SMS 수신여부와 상관없이 발송됩니다.</li>
+                </ul>
+                <p class="table_unit margin_t_10">발송 강좌 : 총 <span class="sendCnt">N</span> 건</p>
+                <table class="p-table p-table--bordered">
+                    <tbody class="text_center">
+                        <tr>
+                            <th scope="row"><label for="sendNum">발신번호</label></th>
+                            <td>
+                                <div class="col-5">
+                                    <div class="p-form-group">
+                                        <input type="text" id="sendNum" class="p-input p-input--auto">
+                                        * SMS 업체에 등록된 번호로만 발송됩니다.
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="smsMessage">메시지</label></th>
+                            <td>
+                                <div class="col-24">
+                                    <div class="p-form-group w100p">
+                                        <textarea name="smsMessage" id="smsMessage" class="p-input"></textarea>
+                                        <p class="text_left">0/ 000자</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal__footer">
+                <a href="#none" title="" class="p-button write SMS">SMS 발송</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1145 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="title" content="직원페이지" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="/common/css/font.css" />
+    <link rel="stylesheet" href="/common/css/default.css" />
+    <link rel="stylesheet" href="/site/staff/css/common.css" />
+    <link rel="stylesheet" href="/site/staff/css/program.css" />
+    <!--[if lt IE 9]><script src="/common/js/html5.js"></script><![endif]-->
+    <script src="/common/js/jquery-1.12.4.HS-20200709.min.js"></script>
+    <title>직원페이지</title>
+</head>
+<body class="staff">
+<header class="header">
+    <div class="wrap clearfix">
+        <h1 class="header__logo">프로그램 관리</h1>
+        <div class="header__title">
+            <!-- $page-heading-->
+        </div>
+        <div class="gnb">
+            <span class="gnb__name">관리자</span>님
+            <a href="/logout.do?mode=LOGIN&amp;rurl=/staff/index.do" class="gnb__logout" title="로그아웃">로그아웃 </a>
+        </div>
+    </div>
+</header>
+<div class="menu-list-wrap">
+    <h2 class="skip">주메뉴</h2>
+    <nav class="menu-list"  data-spy="affix" data-offset-top="0" data-longer="true" data-addaffix =".menu-list-wrap">
+
+
+
+
+
+
+<div class="menu-list-wrap">
+    <h2 class="skip">주메뉴</h2>
+    <nav class="menu-list"  data-spy="affix" data-offset-top="0" data-longer="true" data-addaffix =".menu-list-wrap">
+
+            <ul>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectLectureGroupList.do?key=742" class="menu-list__link" target="_self">강좌관리</a>
+
+            <ul class="submenu-list">
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLectureGroupList.do?key=742" class="submenu-list__link" target="_self">강좌그룹</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLectureList.do?key=743" class="submenu-list__link" target="_self">강좌목록</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrLectureAllInOneForm.do?key=759" class="submenu-list__link" title="새창" target="_blank">강좌접수</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectMngrCnclReqList.do?key=745" class="menu-list__link" target="_self">현황관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrCnclReqList.do?key=745" class="submenu-list__link" target="_self">가상계좌/무통장 취소현황</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrRefundList.do?key=746" class="submenu-list__link" target="_self">환불자명단</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrDayPayList.do?key=747" class="submenu-list__link" target="_self">일일결제내역</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEtcList.do?key=751" class="menu-list__link" target="_self">기타수입관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectEtcList.do?key=751" class="submenu-list__link" target="_self">기타수입관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectEtcPaymentList.do?key=762" class="submenu-list__link" target="_self">기타수입현황</a>
+
+                        <ul>
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectEtcPaymentList.do?key=762" class="submenu-list__link" target="_self">결제내역</a>
+                                </li>
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectEtcReceiptList.do?key=763" class="submenu-list__link" target="_self">현황</a>
+                                </li>
+
+
+
+
+
+
+            </ul>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectLockerList.do?key=754" class="menu-list__link" target="_self">사물함대여관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerList.do?key=754" class="submenu-list__link" target="_self">사물함관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerRentalList.do?key=755" class="submenu-list__link" target="_self">사물함대여현황</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerPaymentList.do?key=765" class="submenu-list__link" target="_self">사물함결제내역</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectDiscountUserList.do?key=758" class="menu-list__link" target="_self">감면대상관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectDiscountUserList.do?key=758" class="submenu-list__link" target="_self">감면대상관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectDiscountRateList.do?key=760" class="submenu-list__link" target="_self">감면코드관리</a>
+
+                        <ul>
+
+
+
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectDiscountRateList.do?key=760" class="submenu-list__link" target="_self">감면코드관리</a>
+                                </li>
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectDiscountBaseList.do?key=761" class="submenu-list__link" target="_self">감면유형관리</a>
+                                </li>
+
+
+            </ul>
+
+        </li>
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item active">
+        <a href="/staff/selectLecturerList.do?key=740" class="menu-list__link" target="_self">강사관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLecturerList.do?key=740" class="submenu-list__link" target="_self">강사목록</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item active">
+                    <a href="/staff/selectMngrEducatorFeeList.do?key=741" class="submenu-list__link" target="_self">강사료</a>
+
+        </li>
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEduPlaceList.do?key=748" class="menu-list__link" target="_self">교육장관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEduAgencyList.do?key=749" class="menu-list__link" target="_self">기관관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectQestnarMngList.do?key=57" class="menu-list__link" target="_self">설문조사관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectBbsMngList.do?key=51" class="menu-list__link" target="_self">게시판관리</a>
+
+        </li>
+
+        </ul>
+
+    </nav>
+    <!-- //lnb -->
+</div>
+
+    </nav>
+    <!-- //lnb -->
+</div>
+
+<div id="container">
+    <div class="wrap clearfix">
+        <main class="main">
+            <article>
+                <h2 class="contents-title">강사료</h2>
+                <div class="contents">
+                    <div class="p-wrap">
+                        <div class="row p-relative">
+                            <div class="h3 col-12" style="font-weight:600;margin-top: 0;margin-bottom:0;line-height: 34px;">[강좌 그룹명 출력]</div>
+                            <div class="col-12 right">
+                                <form id="" name="" action="" method="get">
+                                    <fieldset>
+                                        <input type="hidden" name="" value="">
+                                        <legend>검색</legend>
+                                        <a href="javascript:fnExcelDownload('ADMIN');" class="p-button p-button--combine excel"><span>다운로드</span></a>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+
+                        <table class="p-table p-table--bordered">
+                            <colgroup>
+                                <col style="width:17%;">
+                                <col style="width:83%">
+                            </colgroup>
+                            <tbody class="text_center">
+
+                                <tr>
+                                    <th scope="row">검색 조건</th>
+                                    <td>
+                                        <form name="" action="">
+                                            <fieldset>
+                                                <legend>검색 조건</legend>
+                                                <div class="clearfix">
+                                                    <div class="searchRequirWrap">
+                                                        <div class="searchRequirement text_left">
+                                                            <select name="" class="p-input p-input--auto search_select">
+                                                                <option value="">강좌구분</option>
+                                                                <option value="">대분류</option>
+                                                            </select>
+                                                            <select name="" class="p-input p-input--auto search_select">
+                                                                <option value="">강좌 분야</option>
+                                                                <option value="">중분류</option>
+                                                            </select>
+                                                            <select name="" class="p-input p-input--auto search_select">
+                                                                <option value="">강좌 성격</option>
+                                                                <option value="">정기강좌</option>
+                                                                <option value="">수시강좌</option>
+                                                                <option value="">특별강좌</option>
+                                                            </select>
+                                                            <select name="" class="p-input p-input--auto search_select">
+                                                                <option value="">운영 여부</option>
+                                                                <option value="">개강</option>
+                                                                <option value="">폐강</option>
+                                                            </select>
+                                                            <select name="" class="p-input p-input--auto search_select">
+                                                                <option value="">과세여부</option>
+                                                                <option value="">과세</option>
+                                                                <option value="">비과세</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="courseSearchCriteria">
+                                                            <div class="label1 course_tit">
+                                                                <label for="">강좌명</label>
+                                                                <input type="text" class="p-input p-input--auto">
+                                                            </div>
+                                                            <div class="label2 course_tit">
+                                                                <label for="">강사명</label>
+                                                            </div>
+                                                            <input type="text" class="p-input p-input--auto">
+                                                        </div>
+                                                    </div>
+                                                    <div class="searchBtnWrap">
+                                                        <button class="p-button"><span>검색</span></button>
+                                                    </div>
+                                                </div>
+                                                <style>
+
+                                                </style>
+                                            </fieldset>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">검색요일</th>
+                                    <td class="text_left">
+                                        <div class="clearfix">
+                                            <span class="include-search">
+                                                <span>포함검색</span>
+                                                <div class="include-checkboxes checkboxEl" style="display: inline-block;">
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="monday" class="p-form-checkbox__input">
+                                                        <label for="monday" class="p-form-checkbox__label"><span>월</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="tuesday" class="p-form-checkbox__input">
+                                                        <label for="tuesday" class="p-form-checkbox__label"><span>화</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="wednesday" class="p-form-checkbox__input">
+                                                        <label for="wednesday" class="p-form-checkbox__label"><span>수</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="thursday" class="p-form-checkbox__input">
+                                                        <label for="thursday" class="p-form-checkbox__label"><span>목</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="friday" class="p-form-checkbox__input">
+                                                        <label for="friday" class="p-form-checkbox__label"><span>금</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="saturday" class="p-form-checkbox__input">
+                                                        <label for="saturday" class="p-form-checkbox__label"><span>토</span></label>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                            <span class="single-search">
+                                                <span>단일검색</span>
+                                                <div class="include-checkboxes checkboxEl" style="display: inline-block;">
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="monday_1" class="p-form-checkbox__input">
+                                                        <label for="monday_1" class="p-form-checkbox__label"><span>월</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="tuesday_1" class="p-form-checkbox__input">
+                                                        <label for="tuesday_1" class="p-form-checkbox__label"><span>화</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="wednesday_1" class="p-form-checkbox__input">
+                                                        <label for="wednesday_1" class="p-form-checkbox__label"><span>수</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="thursday_1" class="p-form-checkbox__input">
+                                                        <label for="thursday_1" class="p-form-checkbox__label"><span>목</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="friday_1" class="p-form-checkbox__input">
+                                                        <label for="friday_1" class="p-form-checkbox__label"><span>금</span></label>
+                                                    </span>
+                                                    <span class="p-form-checkbox p-form-checkbox--single">
+                                                        <input type="checkbox" id="saturday_1" class="p-form-checkbox__input">
+                                                        <label for="saturday_1" class="p-form-checkbox__label"><span>토</span></label>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        <!-- <style>
+                                            .checkboxEl label{display:inline-block;overflow:hidden;position:relative;width:0;height:22px;padding-left:20px;box-sizing:border-box;vertical-align:top;}
+                                            .checkboxEl label:before{display:inline-block;position:absolute;top:2px;left:1px;width:18px;height:18px;border:1px solid #aaa;background:#fff;box-sizing:border-box;}
+                                            .checkboxEl input{display:inline-block;opacity:0;position:absolute;top:2px;left:2px;width:12px;height:12px;margin:0;padding:0;vertical-align:middle;}
+                                            .checkboxEl input:checked~.p-form-checkbox__label:before{border-color:#59629d;background-color:#59629d;}
+                                        </style> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script>
+                            function selectAllCheckbox() {
+                                var selectAllCheckbox = document.getElementById('SelectAll');
+                                var itemCheckboxes = document.querySelectorAll("input[name='ItemSelect']");
+                                itemCheckboxes.forEach(checkbox => {
+                                    checkbox.checked = selectAllCheckbox.checked;
+                                });
+                            }
+
+                            function itemCheckboxes() {
+                                var selectAllCheckbox = document.getElementById('SelectAll');
+                                var itemCheckboxes = document.querySelectorAll("input[name='ItemSelect']");
+                                var total = itemCheckboxes.length;
+                                var checked = document.querySelectorAll("input[name='ItemSelect']:checked").length;
+                                selectAllCheckbox.checked = (total === checked);
+                            }
+                        </script>
+                        <!-- <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                const selectAllCheckbox = document.getElementById('SelectAll');
+                                const itemCheckboxes = document.querySelectorAll("input[name='ItemSelect']");
+
+                                selectAllCheckbox.addEventListener('click', function() {
+                                    itemCheckboxes.forEach(checkbox => {
+                                        checkbox.checked = selectAllCheckbox.checked;
+                                    });
+                                });
+
+                                itemCheckboxes.forEach(checkbox => {
+                                    checkbox.addEventListener('click', function() {
+                                        const total = itemCheckboxes.length;
+                                        const checked = document.querySelectorAll("input[name='ItemSelect']:checked").length;
+
+                                        selectAllCheckbox.checked = (total === checked);
+                                    });
+                                });
+                            });
+
+                            function selectAllCheckboxes() {
+                                const selectAllCheckbox = document.getElementById('SelectAll');
+                                const itemCheckboxes = document.querySelectorAll("input[name='ItemSelect']");
+
+                                itemCheckboxes.forEach(checkbox => {
+                                    checkbox.checked = selectAllCheckbox.checked;
+                                });
+                            }
+
+                            function updateSelectAllCheckbox() {
+                                const selectAllCheckbox = document.getElementById('SelectAll');
+                                const itemCheckboxes = document.querySelectorAll("input[name='ItemSelect']");
+                                const total = itemCheckboxes.length;
+                                const checked = document.querySelectorAll("input[name='ItemSelect']:checked").length;
+
+                                selectAllCheckbox.checked = (total === checked);
+                            }
+                        </script> -->
+                        <div class="p-wrap margin_t_20">
+                            <div class="row p-relative">
+                                <div class="col-6">
+                                    <span class="p-total__number">총 <em class="em_black" data-mask="#,##0" data-mask-reverse="true">4</em>건&nbsp;[ <em class="em_b_black">1</em> / 1페이지 ]</span>
+                                    <select name="" class="p-input p-input--auto margin_l_10">
+                                        <option value="10">10</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                        <option value="500">500</option>
+                                    </select>
+                                </div>
+                                <div class="col-18 right">
+                                    <!-- <form id="" name="" action="" method="get">
+                                        <fieldset>
+                                            <legend>강사 검색</legend>
+                                            <input type="hidden" name="key" value="57">
+                                            <button type="button" class="p-button p-button--small bulk-change">일괄변경</button>
+                                            <span class="input_split"></span>
+                                            <button type="button" class="p-button p-button--small SMS">SMS 발송</button>
+                                            <span class="input_split"></span>
+                                            <button type="button" class="p-button p-button--small attendance">출석부 출력</button>
+                                            <span class="input_split"></span>
+                                            <button type="button" class="p-button p-button--small danger">폐강</button>
+                                        </fieldset>
+                                    </form> -->
+                                    <form id="" name="" action="" method="get">
+                                        <fieldset>
+                                            <legend>강사 검색</legend>
+                                            <input type="hidden" name="key" value="57">
+                                            <a hre="#n" class="p-button write p-button--small modalButton bulk-change" data-modal-type="bulk-change"><span>일괄변경</span></a>
+                                            <a hre="#n" class="p-button p-button--small modalButton SMS" data-modal-type="SMS"><span>SMS 발송</span></a>
+                                            <a hre="#n" class="p-button p-button--small modalButton attendance" data-modal-type="attendance"><span>출석부 출력</span></a>
+                                            <a hre="" type="button" class="p-button p-button--small danger">폐강</a>
+                                        </fieldset>
+                                    </form>
+                                    <script>
+                                        $(document).ready(function() {
+                                            var clickedButton;
+                                            $('.modalButton').on('click', function(e) {
+                                                e.preventDefault();
+                                                clickedButton = $(this);
+                                                var modalType = $(this).data('modal-type');
+                                                var popupTemplate = '';
+                                                switch (modalType) {
+                                                    case 'bulk-change':
+                                                        popupTemplate = `
+                                                            <div class="modal__backdrop modal__open" data-modal-type="bulkChange">
+                                                                <div class="modal active" style="display:block;">
+                                                                    <div class="modal__body bulkChange">
+                                                                        <h4 class="modal__header">강좌정보 일괄 변경</h4>
+                                                                        <div class="modal__close">
+                                                                            <button type="button" class="modal__close-button"><span>닫기</span></button>
+                                                                        </div>
+                                                                        <div class="modal__content">
+                                                                            <table class="p-table p-table--bordered">
+                                                                                <tbody class="text_center">
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="enrollPerd">강좌 신청기간</label></th>
+                                                                                        <td>
+                                                                                            <div class="col-5">
+                                                                                                <div class="p-form-group">
+                                                                                                    <div class="p-form-group p-date" data-date="datepicker">
+                                                                                                        <input id="enrollPerd" name="searchStartDe" style="width:110px;" placeholder="yyyy-mm-dd" class="p-input" type="text" value="2024-07-28" data-listener-added_a2a93cd4="true">
+                                                                                                        <div class="p-input__split">
+                                                                                                            <div class="p-datepicker__wrap"><button type="button" class="p-input__item  p-date__icon">달력 열기</button>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span class="p-form__split">~</span>
+                                                                                                    <div class="p-form-group p-date" data-date="datepicker">
+                                                                                                        <input id="searchEndDe" name="searchEndDe" style="width:110px;" placeholder="yyyy-mm-dd" class="p-input" type="text" value="2024-08-27">
+                                                                                                        <div class="p-input__split">
+                                                                                                            <div class="p-datepicker__wrap"><button type="button" class="p-input__item  p-date__icon">달력 열기</button></div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span class="p-form__split"></span>
+                                                                                                    <span class="p-form-group__label" style="width:0px;padding:4px"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="courseRegstPeriod">강좌 신청기간</label></th>
+                                                                                        <td>
+                                                                                            <div class="col-3">
+                                                                                                <div class="p-form-group">
+                                                                                                    <select id="courseRegstPeriod" name="courseRegstPeriod" title="시간 선택" class="p-input p-input--auto">
+                                                                                                        <option value="00">00</option>
+                                                                                                        <option value="01">01</option>
+                                                                                                        <option value="02">02</option>
+                                                                                                        <option value="03">03</option>
+                                                                                                        <option value="04">04</option>
+                                                                                                        <option value="05">05</option>
+                                                                                                        <option value="06">06</option>
+                                                                                                        <option value="07">07</option>
+                                                                                                        <option value="08">08</option>
+                                                                                                        <option value="09" selected="selected">09</option>
+                                                                                                        <option value="10">10</option>
+                                                                                                        <option value="11">11</option>
+                                                                                                        <option value="12">12</option>
+                                                                                                        <option value="13">13</option>
+                                                                                                        <option value="14">14</option>
+                                                                                                        <option value="15">15</option>
+                                                                                                        <option value="16">16</option>
+                                                                                                        <option value="17">17</option>
+                                                                                                        <option value="18">18</option>
+                                                                                                        <option value="19">19</option>
+                                                                                                        <option value="20">20</option>
+                                                                                                        <option value="21">21</option>
+                                                                                                        <option value="22">22</option>
+                                                                                                        <option value="23">23</option>
+                                                                                                    </select>
+                                                                                                    시
+                                                                                                    <select id="" name="" title="분 선택" class="p-input p-input--auto">
+                                                                                                        <option value="00">00</option>
+                                                                                                        <option value="01">01</option>
+                                                                                                        <option value="02">02</option>
+                                                                                                        <option value="03">03</option>
+                                                                                                        <option value="04">04</option>
+                                                                                                        <option value="05">05</option>
+                                                                                                        <option value="06">06</option>
+                                                                                                        <option value="07">07</option>
+                                                                                                        <option value="08">08</option>
+                                                                                                        <option value="09" selected="selected">09</option>
+                                                                                                        <option value="10">10</option>
+                                                                                                        <option value="11">11</option>
+                                                                                                        <option value="12">12</option>
+                                                                                                        <option value="13">13</option>
+                                                                                                        <option value="14">14</option>
+                                                                                                        <option value="15">15</option>
+                                                                                                        <option value="16">16</option>
+                                                                                                        <option value="17">17</option>
+                                                                                                        <option value="18">18</option>
+                                                                                                        <option value="19">19</option>
+                                                                                                        <option value="20">20</option>
+                                                                                                        <option value="21">21</option>
+                                                                                                        <option value="22">22</option>
+                                                                                                        <option value="23">23</option>
+                                                                                                        <option value="24">24</option>
+                                                                                                        <option value="25">25</option>
+                                                                                                        <option value="26">26</option>
+                                                                                                        <option value="27">27</option>
+                                                                                                        <option value="28">28</option>
+                                                                                                        <option value="29">29</option>
+                                                                                                        <option value="30">30</option>
+                                                                                                        <option value="31">31</option>
+                                                                                                        <option value="32">32</option>
+                                                                                                        <option value="33">33</option>
+                                                                                                        <option value="34">34</option>
+                                                                                                        <option value="35">35</option>
+                                                                                                        <option value="36">36</option>
+                                                                                                        <option value="37">37</option>
+                                                                                                        <option value="38">38</option>
+                                                                                                        <option value="39">39</option>
+                                                                                                        <option value="40">40</option>
+                                                                                                        <option value="41">41</option>
+                                                                                                        <option value="42">42</option>
+                                                                                                        <option value="43">43</option>
+                                                                                                        <option value="44">44</option>
+                                                                                                        <option value="45">45</option>
+                                                                                                        <option value="46">46</option>
+                                                                                                        <option value="47">47</option>
+                                                                                                        <option value="48">48</option>
+                                                                                                        <option value="49">49</option>
+                                                                                                        <option value="50">50</option>
+                                                                                                        <option value="51">51</option>
+                                                                                                        <option value="52">52</option>
+                                                                                                        <option value="53">53</option>
+                                                                                                        <option value="54">54</option>
+                                                                                                        <option value="55">55</option>
+                                                                                                        <option value="56">56</option>
+                                                                                                        <option value="57">57</option>
+                                                                                                        <option value="58">58</option>
+                                                                                                        <option value="59">59</option>
+                                                                                                    </select>
+                                                                                                    분 부터
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="courseDuration">강좌 진행기간</label></th>
+                                                                                        <td>
+                                                                                            <div class="col-5">
+                                                                                                <div class="p-form-group">
+                                                                                                    <div class="p-form-group p-date" data-date="datepicker">
+                                                                                                        <input id="courseDuration" name="searchStartDe" style="width:110px;" placeholder="yyyy-mm-dd" class="p-input" type="text" value="2024-07-28" data-listener-added_a2a93cd4="true" data-listener-added_da56b83e="true">
+                                                                                                        <div class="p-input__split">
+                                                                                                            <div class="p-datepicker__wrap"><button type="button" class="p-input__item  p-date__icon">달력 열기</button></div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span class="p-form__split">~</span>
+                                                                                                    <div class="p-form-group p-date" data-date="datepicker">
+                                                                                                        <input id="searchEndDe" name="searchEndDe" style="width:110px;" placeholder="yyyy-mm-dd" class="p-input" type="text" value="2024-08-27" data-listener-added_da56b83e="true">
+                                                                                                        <div class="p-input__split">
+                                                                                                            <div class="p-datepicker__wrap"><button type="button" class="p-input__item  p-date__icon">달력 열기</button></div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span class="p-form__split"></span>
+                                                                                                    <span class="p-form-group__label" style="width:0px;padding:4px"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="reEnrollPerd">강좌 재등록기간</label f></th>
+                                                                                        <td>
+                                                                                            <div class="col-5">
+                                                                                                <div class="p-form-group">
+                                                                                                    강좌 신청기간
+                                                                                                    <select id="reEnrollPerd" name="reEnrollPerd" title="시간 선택" class="p-input p-input--auto">
+                                                                                                        <option value="00">00</option>
+                                                                                                        <option value="01">01</option>
+                                                                                                        <option value="02">02</option>
+                                                                                                        <option value="03">03</option>
+                                                                                                        <option value="04">04</option>
+                                                                                                        <option value="05">05</option>
+                                                                                                        <option value="06">06</option>
+                                                                                                        <option value="07" selected="selected">07</option>
+                                                                                                        <option value="08">08</option>
+                                                                                                        <option value="09">09</option>
+                                                                                                        <option value="10">10</option>
+                                                                                                        <option value="11">11</option>
+                                                                                                        <option value="12">12</option>
+                                                                                                        <option value="13">13</option>
+                                                                                                        <option value="14">14</option>
+                                                                                                        <option value="15">15</option>
+                                                                                                        <option value="16">16</option>
+                                                                                                        <option value="17">17</option>
+                                                                                                        <option value="18">18</option>
+                                                                                                        <option value="19">19</option>
+                                                                                                        <option value="20">20</option>
+                                                                                                        <option value="21">21</option>
+                                                                                                        <option value="22">22</option>
+                                                                                                        <option value="23">23</option>
+                                                                                                        <option value="24">24</option>
+                                                                                                        <option value="25">25</option>
+                                                                                                        <option value="26">26</option>
+                                                                                                        <option value="27">27</option>
+                                                                                                        <option value="28">28</option>
+                                                                                                        <option value="29">29</option>
+                                                                                                        <option value="30">30</option>
+                                                                                                    </select>
+                                                                                                    일 전부터 재등록 회원만 우선 등록가능.
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="sessionTotal">총 수강횟수</label></th>
+                                                                                        <td>
+                                                                                            <div class="col-5">
+                                                                                                <div class="p-form-group">
+                                                                                                    <input type="text" id="sessionTotal" class="p-input p-input--auto" data-listener-added_a2a93cd4="true" data-listener-added_da56b83e="true">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="monthlyTotal">월 수강횟수</label></th>
+                                                                                        <td>
+                                                                                            <div class="col-5">
+                                                                                                <div class="p-form-group">
+                                                                                                    <input type="text" id="monthlyTotal" class="p-input p-input--auto" data-listener-added_a2a93cd4="true" data-listener-added_da56b83e="true">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="modal__footer">
+                                                                            <a href="#none" title="" class="p-button write">일괄 변경</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        `;
+                                                        break;
+                                                    case 'SMS':
+                                                        popupTemplate = `
+                                                            <div class="modal__backdrop modal__open" data-modal-type="SMS">
+                                                                <div class="modal active" style="display:block;">
+                                                                    <div class="modal__body SMS">
+                                                                        <h4 class="modal__header">SMS 발송</h4>
+                                                                        <div class="modal__close">
+                                                                            <button type="button" class="modal__close-button"><span>닫기</span></button>
+                                                                        </div>
+                                                                        <div class="modal__content">
+                                                                            <ul class="bu">
+                                                                                <li>결제자가 아닌 수강자 명단에 등록된 수강자 번호로 문자가 전송됩니다</li>
+                                                                                <li>SMS 수신여부와 상관없이 발송됩니다.</li>
+                                                                            </ul>
+                                                                            <p class="table_unit margin_t_10">발송 강좌 : 총 <span class="sendCnt">N</span> 건</p>
+                                                                            <table class="p-table p-table--bordered">
+                                                                                <tbody class="text_center">
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="sendNum">발신번호</label></th>
+                                                                                        <td>
+                                                                                            <div class="col-5">
+                                                                                                <div class="p-form-group">
+                                                                                                    <input type="text" id="sendNum" class="p-input p-input--auto">
+                                                                                                    * SMS 업체에 등록된 번호로만 발송됩니다.
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row"><label for="smsMessage">메시지</label></th>
+                                                                                        <td>
+                                                                                            <div class="col-24">
+                                                                                                <div class="p-form-group w100p">
+                                                                                                    <textarea name="smsMessage" id="smsMessage" class="p-input"></textarea>
+                                                                                                    <p class="text_left">0/ 000자</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <div class="modal__footer">
+                                                                            <a href="#none" title="" class="p-button write SMS">SMS 발송</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        `;
+                                                        break;
+                                                }
+                                                $('.contents').append(popupTemplate);
+                                                $('.modal__close-button').focus();
+                                                $(document).on("click",'.modal__close-button',function(){
+                                                    $('[class*="modal__"]').remove();
+                                                    console.log('클릭한 버튼' + clickedButton);
+                                                    clickedButton.focus(); // 닫기 버튼 클릭 시 원래 클릭한 버튼으로 포커스 이동
+                                                })
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <table class="p-table p-table--bordered">
+                                <colgroup>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" name="SelectAll" id="SelectAll" class="p-form-checkbox__input" onclick="selectAllCheckbox()">
+                                                <label for="SelectAll" class="p-form-checkbox__label">전체선택</label>
+                                            </span>
+                                        </th>
+                                        <th scope="col">No. </th>
+                                        <th scope="col">구분<br>(분야)</th><th scope="col">강의실</th>
+                                        <th scope="col">노출<br>순서</th>
+                                        <th scope="col">강 좌 명</th>
+                                        <th scope="col">강사명</th>
+                                        <th scope="col">수강시간</th>
+                                        <th scope="col">대상<br>(수강료)</th>
+                                        <th scope="col">신청기간</th>
+                                        <th scope="col">모집<br>인원</th>
+                                        <th scope="col">접수<br>인원</th>
+                                        <th scope="col">대기<br>인원</th>
+                                        <th scope="col">운영<br>여부</th>
+                                        <th scope="col">접수<br>현황</th>
+                                        <th scope="col">수료<br>현황</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text_center">
+                                    <tr id="row_4" data-display="true">
+                                        <td class="p-table__checkbox">
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" name="ItemSelect" id="ItemSelect1" class="p-form-checkbox__input" value="60" onclick="itemCheckboxes()">
+                                                <label for="ItemSelect1" class="p-form-checkbox__label">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>N</td>
+                                        <td>[대분류]<br>([중분류])</td><td>[교육장명]</td>
+                                        <td>[번호]</td>
+                                        <td>[등록한 강좌 명 출력]</td>
+                                        <td>[강사명]</td>
+                                        <td>[요일]<br>hh:mm~hh:mm</td>
+                                        <td>[대상]<br>([00,000]원)</td>
+                                        <td>yyyy-mm-dd~<br>yyyy-mm-dd</td>
+                                        <td>[00]명</td>
+                                        <td>[00]명</td>
+                                        <td>[00]명</td>
+                                        <td><span>개강</span></td>
+                                        <td>
+                                            <span>접수 현황</span>
+                                        </td>
+                                        <td><span>수료 현황</span></td>
+                                    </tr>
+                                    <tr id="row_4" data-display="true">
+                                        <td class="p-table__checkbox">
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" name="ItemSelect" id="ItemSelect2" class="p-form-checkbox__input" value="60" onclick="itemCheckboxes()">
+                                                <label for="ItemSelect2" class="p-form-checkbox__label">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>N-2</td>
+                                        <td>특강<br>(단기특강)</td><td>202호</td>
+                                        <td>06-01</td>
+                                        <td>01 건국대학교 모빌리티 인문학 특강</td>
+                                        <td>미정</td>
+                                        <td>[월]<br>15:30~17:30</td>
+                                        <td>성인<br>(0원)</td>
+                                        <td>2024-06-14~<br>2024-07-31</td>
+                                        <td>30명</td>
+                                        <td>35명</td>
+                                        <td>99명</td>
+                                        <td><span>개강</span></td>
+                                        <td>
+                                            <span>접수 현황</span>
+                                        </td>
+                                        <td><span>수료 현황</span></td>
+                                    </tr>
+                                    <tr id="row_4" data-display="true">
+                                        <td class="p-table__checkbox">
+                                            <span class="p-form-checkbox p-form-checkbox--single">
+                                                <input type="checkbox" name="ItemSelect" id="ItemSelect3" class="p-form-checkbox__input" value="60" onclick="itemCheckboxes()">
+                                                <label for="ItemSelect3" class="p-form-checkbox__label">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>N-3</td>
+                                        <td>특강<br>(단기특강)</td><td>202호</td>
+                                        <td>08-03</td>
+                                        <td>블록동화A</td>
+                                        <td>홍길동</td>
+                                        <td>[월]<br>15:30~16:20</td>
+                                        <td>5~6세<br>(90,000원)</td>
+                                        <td>2024-05-13~<br>2024-06-09</td>
+                                        <td>30명</td>
+                                        <td>0명</td>
+                                        <td>0명</td>
+                                        <td><span class="danger">폐강</span></td>
+                                        <td>
+                                            <span>접수 현황</span>
+                                        </td>
+                                        <td><span>수료 현황</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row margin_t_20">
+                                <div class="col-12">
+                                    <div class="p-pagination left">
+                                        <div class="p-page">
+                                            <div class="p-page__control"><a href="./selectQestnarMngList.do?key=57&amp;pageUnit=10&amp;searchCnd=all&amp;pageIndex=1" class="p-page__link prev-end"><span class="skip">처음 페이지</span></a><a href="./selectQestnarMngList.do?key=57&amp;pageUnit=10&amp;searchCnd=all&amp;pageIndex=1" class="p-page__link prev"><span class="skip">이전 10 페이지</span></a><a href="./selectQestnarMngList.do?key=57&amp;pageUnit=10&amp;searchCnd=all&amp;pageIndex=1" class="p-page__link prev-one">이전 페이지</a>
+                                            </div>
+                                            <div class="p-page__link-group"><strong title="현재 1페이지" class="p-page__link active">1</strong></div>
+                                            <div class="p-page__control"><a href="./selectQestnarMngList.do?key=57&amp;pageUnit=10&amp;searchCnd=all&amp;pageIndex=1" class="p-page__link next-one">다음 페이지</a>
+                                                <a href="./selectQestnarMngList.do?key=57&amp;pageUnit=10&amp;searchCnd=all&amp;pageIndex=1" class="p-page__link next"><span class="skip">다음 10 페이지</span></a><a href="./selectQestnarMngList.do?key=57&amp;pageUnit=10&amp;searchCnd=all&amp;pageIndex=1" class="p-page__link next-end"><span class="skip">끝 페이지</span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+
+                    	function fnSearch(){
+                    		 var frmData = document.searchForm ;
+                             frmData.action = "./selectMngrEducatorFeeList.do?key=741";
+                             frmData.method="get";
+                             frmData.submit() ;
+                    	}
+
+                    	function fnExcelDownload(basicCode){
+                            var frmData = document.searchForm ;
+                            frmData.action = "./selectMngrEducatorFeeExcelList.do?key=741";
+                            frmData.method="get";
+                            frmData.submit() ;
+                       }
+
+                    </script>
+                </div>
+                <!-- //contents -->
+            </article>
+        </main>
+
+    </div>
+    <!-- //wrap -->
+</div>
+<!-- //container -->
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer_info">
+            <p>Copyright ⓒ 2005-2016 HANSHINIT. All RIGHTS RESERVED</p>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+
+<script src="/site/staff/js/script.js"></script>
+<script src="/common/js/program.js"></script>
+
+</body>
+</html>

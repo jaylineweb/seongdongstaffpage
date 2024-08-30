@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>강좌접수</title>
+	<meta name="decorator" content="staff" />
+	<link rel="stylesheet" href="/common/css/font.css" />
+    <link rel="stylesheet" href="/common/css/default.css" />
+    <link rel="stylesheet" href="/site/staff/css/common.css" />
+    <link rel="stylesheet" href="/site/staff/css/program.css" />
+    <!--[if lt IE 9]><script src="/common/js/html5.js"></script><![endif]-->
+    <script src="/common/js/jquery-1.12.4.HS-20200709.min.js"></script>
+
+	<!-- <script src="/common/js/program.js"></script> -->
+</head>
+<body>
+<link rel="stylesheet" href="/site/staff/paycss/css/common.css">
+<link rel="stylesheet" href="/site/staff/paycss/css/program.css">
+<link rel="stylesheet" href="/site/staff/paycss/css/program_layout.css">
+
+<div class="p-wrap">
+    <div class="wrap clearfix">
+        <main class="main p-body">
+            <article>
+                <h2 class="contents-title"></h2>
+                <div class="contents seongdong"><!-- seongdong 클래스 하나 추가했습니다 -->
+                    <div class="staff_wrap clearfix">
+                        <div class="col1">
+                            <div class="staff_detail">
+                                <div class="manage_info">
+                                    <h2 class="skip">담당자 정보</h2>
+                                    <span class="desc">담당자 : 관리자</span>
+                                </div>
+                                <div class="manage_date">
+                                    <span class="dat_info">2024-08-07(수요일) | <span class="time">09:22</span></span>
+                                </div>
+                                <form action="" name="userForm" id="userForm">
+                                 <input type="hidden" name="userId" id="userId" value=""/>
+                                <div class="member_info">
+                                    <ul class="member_info_list">
+                                        <li class="member_info_item">
+                                            <div class="member_row">
+                                                <label for="searchKrwd">회원검색</label>
+                                                <span>
+                                                        <input type="text" name="searchKrwd" id="searchKrwd"   value=""/ onkeyup="fnSearchUser(event);"  placeholder="아이디/회원명/연락처" style="width:192px;" class="p-input p-input--auto" />
+
+                                                        <button type="button" class="p-button search searchUser" id="searchUser">검색</button>
+                                                    </span>
+                                            </div>
+                                            <div id="displayList" style="border: solid 1px gray; height: 100px; overflow: auto; margin-left: 77px; margin-top; -1px; border-top: 0px; overflow:scroll; overflow-x:hidden;"></div>
+                                        </li>
+                                        <li class="member_info_item">
+                                            <div class="member_row">
+                                                <label for="member_name">회원명</label>
+                                                <span>
+                                                        <input type="text" id="userNm" name="userNm" value="" class="p-input p-input--auto">
+                                                        <button type="button" class="p-button reset">초기화</button>
+                                                    </span>
+                                            </div>
+                                        </li>
+                                        <li class="member_info_item">
+                                            <div class="member_row">
+                                                <label for="mobile_no1">연락처</label>
+                                                <span>
+                                                        <input type="text" id="phoneNo1" name="phoneNo1" value="" class="input input_num p-input p-input--auto" size="4" maxlength="4" required="required">
+                                                        <span>-</span>
+                                                        <input type="text" id="phoneNo2" name="phoneNo2" value="" class="input input_num p-input p-input--auto" size="4" maxlength="4" required="required">
+                                                        <span>-</span>
+                                                        <input type="text" id="phoneNo3" name="phoneNo3" value="" class="input input_num p-input p-input--auto" size="4" maxlength="4" required="required">
+                                                    </span>
+                                            </div>
+                                        </li>
+                                        <li class="member_info_item">
+                                            <div class="member_row">
+                                                <label for="member_age"><span>나이</span></label>
+                                                <span class="member_age_r">
+                                                        <input type="text" id="userAge" name="userAge"   value="" class="p-input p-input--auto">
+                                                        <p>*선택사항</p>
+                                                    </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="member_btn_list">
+                                        <button type="button" class="p-button" id="signUp">회원가입</button>
+                                        <button type="button" class="p-button" id="profile">회원정보</button>
+                                        <button type="button" class="p-button" id="saveNote">메모저장</button>
+                                    </div>
+                                    <textarea name="userInput" id="userInput" class="user_input"></textarea>
+                                </div>
+                                </form>
+                                <!-- // 담당자 정보 -->
+                                <!-- 실 수강자 정보 입력 -->
+                                <div class="entActStdInf">
+                                    <h2 class="course_tit">실 수강자 정보 입력</h2>
+                                    <form action="" name="">
+                                        <div class="student_info">
+                                            <label for="student_name" class="label_name label">수강자명</label>
+                                            <input type="text" id="student_name" name="student_name" class="input_name student_input" onfocus="resetValue(this)">
+                                        </div>
+                                        <div class="student_info">
+                                            <label for="student_contact" class="label_contact label">수강자연락처</label>
+                                            <input type="tel" id="student_contact" name="student_contact" class="input_contact student_input" placeholder="010-1234-5678" oninput="validateNumber(this)" onfocus="resetValue(this)">
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- //실 수강자 정보 입력 -->
+                                <div class="course_info">
+                                    <h2 class="course_tit">기존 수강 정보</h2>
+                                    <div class="course_detail_wrap">
+                                        <div class="course_detail_table">
+                                            <table class="p-table type1 tableTr">
+                                                <caption>기존 수강정보 - 강좌명,수강기간,금액</caption>
+                                                <thead>
+                                                <tr> <th scope="col">강좌명</th>
+                                                    <th scope="col">수강기간</th>
+                                                    <th scope="col">금액</th>
+                                                </tr>
+                                                </thead>
+                                                <!-- 높이 조절 영역 ↓ .course_detail_table .p-table tbody[id="userLectureList"]-->
+                                                <tbody id="userLectureList">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="course_btn_list">
+                                        <button type="button" class="course_btn p-button re_register" onclick="fnRe_register(this);">재등록</button>
+                                        <button type="button" class="course_btn p-button modify" onclick="fnLectureChange(this);">변경</button>
+                                        <button type="button" class="course_btn p-button payRefund">환불</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col2">
+                            <!-- 분류 -->
+                            <div class="info">
+                                <form action="/staff/selectMngrLectureSearchList.do" name="searchForm" id="searchForm">
+                                    <div>
+                                        <select id="groupNo" name="groupNo" class="p-input p-input--auto semester_select major_category" >
+
+                                        </select>
+                                        <select id="lectureType" name="lectureType" class="p-input p-input--auto" onchange="fnLectureFieldSelect(this.value);">
+                                        <option value="">강의구분</option>
+
+                                        </select>
+
+                                        <select id="lectureField" name="lectureField" class="p-input p-input--auto sub_category">
+                                        <option value="">강의분야</option>
+
+                                        </select>
+                                        <input type="text" class="p-input p-input--auto">
+                                        <button type="button" class="p-button p-button--small primary btn-search searchLectureList" title="찾기">찾기</button>
+                                        <button type="button" class="p-button p-button--small primary btn-view-all" title="전체보기">전체보기</button>
+                                    </div>
+                                    <!-- 필요 없는 영역 주석처리 ↓-->
+                                    <!-- <div>
+                                        <select id="listAutoSel" name="listAutoSel" class="p-input p-input--auto list_auto">
+                                            <option value="1" >리스트(자동)</option>
+                                            <option value="0" >리스트(수동)</option>
+                                        </select>
+                                        <select id="checkAutoSel" name="checkAutoSel" class="p-input p-input--auto check_auto">
+                                            <option value="1" >체크(자동)</option>
+                                            <option value="0" >체크(수동)</option>
+                                        </select>
+                                    </div> -->
+                                    <!-- //필요 없는 영역 주석처리 -->
+                                </form>
+                            </div>
+                            <!-- 강좌명,대상(가격),강의실,요일 및 시간,신청/정원, 수강기간, 구분 -->
+                            <div class="course_detail_wrap">
+                                <div class="course_detail_table">
+                                    <table class="p-table type2">
+                                        <caption>강좌명,대상(가격),강의실,요일 및 시간,신청/정원, 수강기간, 구분 등의 정보를 제공하고 있습니다.</caption>
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">강좌명</th>
+                                            <th scope="col">대상(가격)</th>
+                                            <th scope="col">강의실</th>
+                                            <th scope="col">요일 및 시간</th>
+                                            <th scope="col">신청/정원</th>
+                                            <th scope="col">수강기간</th>
+                                            <th scope="col">구분</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                        <tr>
+                                        <td colspan="100%" class="textACenter">강좌 정보가 존재하지않습니다.</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <!-- 강좌명,개월,기간,요일 및 시간,수강대상, 할인유형 -->
+                            <div class="course_detail_wrap">
+                                <div class="course_detail_table">
+                                    <table class="p-table type3" id="aTable">
+                                        <caption>강좌명,개월,기간,요일 및 시간,수강대상,할인유형</caption>
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">
+                                                <span class="p-form-checkbox p-form-checkbox--single">
+                                                    <input type="checkbox" name="SelectAll" id="SelectAll" onclick="allChecked();" class="p-form-checkbox__input">
+                                                    <label for="SelectAll" class="p-form-checkbox__label">선택</label>
+                                                </span>
+                                            </th>
+                                            <th scope="col">강좌명</th>
+                                            <th scope="col">기간</th>
+                                            <th scope="col">요일 및 시간</th>
+                                            <th scope="col">수강대상</th>
+                                            <th scope="col">할인유형</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="payTargetList"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- //course_detail_table -->
+                            <div class="billing">
+                                <div class="billing_wrap">
+                                    <form action="" name="bform" id="bform">
+                                        <div class="billing_detail_form">
+                                            <label for="agencyRate">할인유형</label>
+                                            <select id="agencyRate" name="agencyRate" onchange="fnDiscountCalc(this);" class="p-input p-input--auto">
+                                                <option value="0">선택</option>
+
+                                            </select>
+                                            <label for="">개월수</label>
+                                            <select id="discMonth" name="discMonth" onchange="fnDiscMonthChange(this);" class="p-input p-input--auto">
+                                                <option value="0">선택</option>
+                                                <option value="1">1개월</option>
+                                                <option value="2">2개월</option>
+                                                <option value="3">3개월</option>
+
+                                            </select>
+
+                                            <label for="start_Dt">시작일자</label>
+                                            <input type="text" id="start_Dt" readonly class="p-input p-input--auto">
+                                            <label for="end_Dt">끝일자</label>
+                                            <input type="text" id="end_Dt" readonly class="p-input p-input--auto">
+
+                                            <button type="button" id="deleteSlct" class="p-button delete_select" onclick="fnLectureSelectedDelete();">선택삭제</button>
+                                        </div>
+                                        <div class="billing_edit">
+                                            <label for="">금액수정</label>
+                                            <input type="text" name="pAmount" id="pAmount" value="0" style="text-align:right;" class="p-input p-input--auto"  placeholder="0">
+                                            <input type="hidden" name="initAmount" id="initAmount" value="0" />
+                                            <button type="button" id="editAmnt" class="p-button edit_amount" onclick="fnPayAmountModify(this);">금액수정</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- //billing -->
+                            <div class="payment">
+                                <div class="payment_amount">
+                                    <label for="pay_amnt">결제예정금액</label>
+                                    <input type="text" id="payAmount" name="payAmount" value="0"  class="p-input p-input--auto" placeholder="0">
+                                </div>
+                                <div class="payment_methods">
+                                    <button type="button" class="p-button payment_btn payCash">현금</button>
+                                    <button type="button" class="p-button payment_btn payCard" >카드</button>
+                                    <button type="button" class="p-button payment_btn payVAccount">가상계좌</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //contents -->
+            </article>
+        </main>
+    </div>
+    <!-- //wrap -->
+</div>
+<form name="payform" id="payform">
+    <input type="hidden" name="paramPayAmount" id="paramPayAmount" value=""/>
+    <input type="hidden" name="paramLectureList" id="paramLectureList" value=""/>
+    <input type="hidden" name="paramDiscMonth" id="paramDiscMonth" value=""/>
+    <input type="hidden" name="paramUserId" id="paramUserId" value=""/>
+    <input type="hidden" name="paramAgencyRateCd" id="paramAgencyRateCd" value=""/>
+    <input type="hidden" name="paramDiscStartDate" id="paramDiscStartDate" value=""/>
+    <input type="hidden" name="paramDiscEndDate" id="paramDiscEndDate" value=""/>
+</form>
+<form name="hform" id="hform">
+    <input type="hidden" name="key" id="key" value=" 759"/>
+    <input type="hidden" name="hUserId" id="hUserId" value=""/>
+    <input type="hidden" name="hGroupNo" id="hGroupNo" value=""/>
+    <input type="hidden" name="hLectureNo" id="hLectureNo" value=""/>
+    <input type="hidden" name="hTargetCd" id="hTargetCd" value=""/>
+    <input type="hidden" name="hEduPlaceNo" id="hEduPlaceNo" value=""/>
+    <input type="hidden" name="hLectureReceiptNo" id="hLectureReceiptNo" value=""/>
+
+</form>
+<div class="modal" id="setLectureModal" data-width="1000" data-height="100" tabindex="0" role="dialog" style="overflow-y: hidden;"></div>
+<!-- //container -->
+<!--
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer_info">
+            <p>Copyright ⓒ 2005-2016 HANSHINIT. All RIGHTS RESERVED</p>
+        </div>
+    </div>
+</footer>
+//footer -->
+<script>
+
+    function fnReplaceAll(str, searchStr, replaceStr) {
+        return str.split(searchStr).join(replaceStr);
+    }
+
+    function addClassBasedOnLocation() { //20240514
+        if (window.location.pathname === "/staff/selectMngrLectureAllInOneForm.do") {
+            $('body.staff #container .wrap .main article .contents.seongdong').parents('.p-wrap').parent().addClass('seongdong_wrap');
+        }
+    }
+
+    $(document).ready(function() {
+        addClassBasedOnLocation(); // 20240514
+    	$(".searchLectureList").click(function (e) {
+    		var key = 759;
+    		let userId =  $("#userId").val();
+    		document.searchForm.action="/staff/selectMngrLectureSearchList.do?key="+key+"&userId="+userId;
+    		document.searchForm.method="post";
+    		document.searchForm.submit();
+    	});
+
+    	$("#displayList").hide();
+
+    	var wordLength = $(this).val().trim().length;
+    	if(wordLength == 0){
+    		$("#displayList").hide();
+    	}
+    	$(".searchUser").click(function (e) {
+    		var chkList = document.querySelectorAll(".check");
+            for(var i=0; i< chkList.length ; i++){
+                     chkList[i].parentElement.parentElement.remove();
+            }
+    		var formData = { searchKrwd :  $("#searchKrwd").val()};
+            e.preventDefault();
+            $.ajax({
+                type : 'post',
+                url : '/staff/selectMngrAutoUserAjax.do',
+                data : formData,
+                dataType : 'json',
+                success : function(data){
+                    if(data.length > 0){
+                        // 검색된 데이터가 있는 경우
+                        var html = "";
+                        var spanCount = 0;
+                        var spanHeight = 0;
+                        $.each(data, function(index, item){
+                            var userId = item.userId;
+                            var userNm = item.userNm;
+                            var email = item.email;
+                            var phoneNo = item.phoneNo;
+                            spanCount = spanCount + 1;
+                            spanHeight = spanHeight + 25;
+                            // 검색목록들과 검색단어를 모두 소문자로 바꾼 후 검색단어가 나타난 곳의 index를 표시.
+                            var index = userNm.toLowerCase().indexOf( $("#searchKrwd").val().toLowerCase() );
+                            // jaVa -> java
+                            var len = $("#searchKrwd").val().length;
+                            // 검색한 단어를 파랑색으로 표현
+                            //var result = userNm.substr(0, index) + "<span style='color:blue;'>"+userNm.substr(index, len)+"</span>" + userNm.substr(index+len);
+
+                            html += "<span class='result' id='"+userId+"|"+userNm+"' style='cursor:pointer;' >" + userNm + "&nbsp;("+phoneNo+")</span><br>";
+
+                        });
+
+                        var input_width = $("#searchKrwd").css("width"); // 검색어 input 태그 width 알아오기
+                        $("#displayList").css({"width":input_width}); // 검색 결과의 width와 일치시키기
+                        if(spanCount <= 5){
+                             $("#displayList").css({"height":spanHeight});
+                        } else {
+                             $("#displayList").css({"height":100});
+                        }
+
+                        $("#displayList").html(html);
+                        $("#displayList").show();
+                    } else {
+                        alert('존재하지 않는 회원입니다.');
+                    }
+
+                },
+                error: function(xhr, status, error){
+
+                }
+            });
+    	});
+
+    	$(document).on('click', ".result", function(){
+
+   	        //var userNm = $(this).text();
+   	        var userInfo = $(this).attr('id');
+   	        var userId = userInfo.split('|')[0];
+   	        var userNm = userInfo.split('|')[1];
+   	        $("#userId").val(userId);
+   	        $("#searchKrwd").val(userId);
+   	        $("#userNm").val(userNm);
+   	        $("#displayList").hide();
+   	        fnSearchUserInfo(userId); // 검색기능
+   	        fnUserOldLectureList(userId); //기존수강내역
+   	        fnUserLectureDiscountList(userId); //사용자감면
+    	 });
+    });
+
+
+    function fnSearchUser(e){
+    	//alert(e);
+    	if(e.keyCode == 13){
+
+    		var chkList = document.querySelectorAll(".check");
+            for(var i=0; i< chkList.length ; i++){
+                     chkList[i].parentElement.parentElement.remove();
+            }
+    		var formData = { searchKrwd :  $("#searchKrwd").val()};
+            e.preventDefault();
+            $.ajax({
+                type : 'post',
+                url : '/staff/selectMngrAutoUserAjax.do',
+                data : formData,
+                dataType : 'json',
+                success : function(data){
+                    if(data.length > 0){
+                        // 검색된 데이터가 있는 경우
+                        var html = "";
+                        var spanCount = 0;
+                        var spanHeight = 0;
+                        $.each(data, function(index, item){
+                            var userId = item.userId;
+                            var userNm = item.userNm;
+                            var email = item.email;
+                            var phoneNo = item.phoneNo;
+                            //alert(userNm);
+                            spanCount = spanCount + 1;
+                            spanHeight = spanHeight + 25;
+                            // 검색목록들과 검색단어를 모두 소문자로 바꾼 후 검색단어가 나타난 곳의 index를 표시.
+                            var index = userNm.toLowerCase().indexOf( $("#searchKrwd").val().toLowerCase() );
+                            // jaVa -> java
+                            var len = $("#searchKrwd").val().length;
+                            // 검색한 단어를 파랑색으로 표현
+                            //var result = userNm.substr(0, index) + "<span style='color:blue;'>"+userNm.substr(index, len)+"</span>" + userNm.substr(index+len);
+
+                            html += "<span class='result' id='"+userId+"|"+userNm+"' style='cursor:pointer;' >" + userNm + "&nbsp;("+phoneNo+")</span><br>";
+
+                        });
+
+                        var input_width = $("#searchKrwd").css("width"); // 검색어 input 태그 width 알아오기
+                        $("#displayList").css({"width":input_width}); // 검색 결과의 width와 일치시키기
+                        if(spanCount <= 5){
+                             $("#displayList").css({"height":spanHeight});
+                        } else {
+                             $("#displayList").css({"height":100});
+                        }
+
+                        $("#displayList").html(html);
+                        $("#displayList").show();
+                    } else {
+                    	alert('존재하지 않는 회원입니다.');
+                    }
+
+                },
+                error: function(xhr, status, error){
+
+                }
+
+            });
+    	}
+    }
+
+    function fnSearchUserInfo(userId){
+        var formData = { userId :  userId};
+        $.ajax({
+            type : 'post',
+            url : '/staff/selectMngrLectureUserAjax.do',
+            data : formData,
+            dataType : 'json',
+            success : function(data){
+
+               	var userId = data.userId;
+                var userNm = data.userNm;
+                var email = data.email;
+                var userAge = data.userAge;
+                var phoneNo = data.phoneNo;
+                var phoneNo1 = data.phoneNo1;
+                var phoneNo2 = data.phoneNo2;
+                var phoneNo3 = data.phoneNo3;
+
+                $("#phoneNo1").val(phoneNo1);
+                $("#phoneNo2").val(phoneNo2);
+                $("#phoneNo3").val(phoneNo3);
+                $("#userAge").val(userAge);
+
+
+            },
+            error: function(xhr, status, error){
+
+            }
+
+        });
+    }
+
+    function fnUserLectureDiscountList(userId){
+        var formData = { userId :  userId};
+
+        $.ajax({
+            type : 'post',
+            url : '/staff/selectMngrLectureUserDiscountAjax.do',
+            data : formData,
+            dataType : 'json',
+            success : function(data){
+                var selUserDiscountList = "<option value=''>선택</option>";
+                $.each(data, function(index, item){
+                    var agencyBasicCode = item.agencyBasicCode;
+                    var agencyCode = item.agencyCode;
+                    var agencyRate = item.agencyRate;
+                    var discountNm = item.discountNm;
+                    var userSelected = item.userSelected;
+
+                    selUserDiscountList += "<option value='"+agencyRate+"' "+userSelected+" >"+discountNm+"</option>";
+
+                });
+
+            	// alert(selUserDiscountList);
+                $("#agencyRate").html(selUserDiscountList);
+                $("#agencyRate").show();
+            },
+            error: function(xhr, status, error){
+
+            }
+
+        });
+    }
+
+/* 기존강좌 */
+    function fnUserOldLectureList(userId){
+        var formData = { userId :  userId};
+        $.ajax({
+            type : 'post',
+            url : '/staff/selectMngrOldUserLectureAjax.do',
+            data : formData,
+            dataType : 'json',
+            success : function(data){
+
+            	if(data.length > 0){
+            	    var html = "";
+                    $.each(data, function(index, item){
+                    	var groupNo = item.groupNo;
+                        var lectureNo = item.lectureNo;
+                        var lectureNm = item.lectureNm;
+
+                        var targetCd = nvl(item.targetCd);
+                        var eduPlaceNo = item.eduPlaceNo;
+                        var ableDayOfWeek = item.ableDayOfWeek;
+
+                        var tuition = item.tuition;
+                        var finPrice = item.finPrice;
+                        var lecturePeriod = item.lectureStartDate + "~" +  item.lectureEndDate;
+                        var lectureReceiptNo = item.lectureReceiptNo;
+                        var userId = item.userId;
+                        var clickTrId = userId+"_"+groupNo+"_"+lectureNo+"_"+lectureReceiptNo+"_"+targetCd+"_"+eduPlaceNo;
+
+
+                        // 검색한 단어를 파랑색으로 표현
+                        //var result = userNm.substr(0, index) + "<span style='color:blue;'>"+userNm.substr(index, len)+"</span>" + userNm.substr(index+len);
+                        //html += "<tr style='cursor:pointer;' id='"+clickTrId+"' onclick='fnSelectedColor(this, "+userId+", "+groupNo+", "+lectureNo+", "+lectureReceiptNo+", "+targetCd+", "+eduPlaceNo+");' ondblclick='fnOldLectureSelected(this, "+groupNo+", "+lectureNo+", "+targetCd+");'>";
+                        html += "<tr style='cursor:pointer;' id='"+clickTrId+"' onclick=\"fnSelectedColor(this,'"+userId+"', "+groupNo+", "+lectureNo+", "+lectureReceiptNo+", '"+targetCd+"', "+eduPlaceNo+");\" ondblclick=\"fnOldLectureSelected(this, "+groupNo+", "+lectureNo+", '"+targetCd+"');\">";
+                        //html += "<td><input type='radio' name='rdPreLecture' id='rdPreLecture' value='"+clickTrId+"'/></td>";
+                        html += "<td>"+lectureNm+"</td><td class='text_center'>"+lecturePeriod+"</td><td class='text_right'>"+tuition+"</td></tr>";
+
+                    });
+
+                    $("#userLectureList").html(html);
+                    $("#userLectureList").show();
+                } else {
+                    alert('수강정보가 존재하지 않습니다.');
+                }
+
+
+            },
+            error: function(xhr, status, error){
+
+            }
+
+        });
+    }
+
+    function nvl(input) {
+    	  if (input == null || input == "null" || input == undefined) {
+    	    return "0";
+    	  }
+    	  return input;
+    }
+
+    function fnLectureFieldSelect(lectureType){
+
+        var formData = { lectureType :  lectureType};
+        $.ajax({
+            type : 'post',
+            url : '/staff/selectMngrAllInOneLectureFieldAjax.do',
+            data : formData,
+            dataType : 'json',
+            success : function(data){
+                let sItemHtml = '<option value="">강의분야</option>';
+                $(data).each(function(){
+
+                    sItemHtml +="<option value='"+this.code+"'>"+this.codeNm+"</option>";
+
+                });
+                $("select[name=lectureField]").html(sItemHtml);
+
+            },
+            error: function(xhr, status, error){
+
+            }
+
+        });
+    }
+
+    function fnSelectedColor(obj, userId, groupNo, lectureNo, lectureReceiptNo, targetCd, eduPlaceNo){
+
+        $('#hUserId').val(userId);
+        $('#hGroupNo').val(groupNo);
+        $('#hLectureNo').val(lectureNo);
+        $('#hLectureReceiptNo').val(lectureReceiptNo);
+        if(targetCd == 0 || targetCd == '0') {targetCd = "";}
+        $('#hTargetCd').val(targetCd);
+        $('#hEduPlaceNo').val(eduPlaceNo);
+
+        var orgBColor = '#ffffff';
+        var orgTColor = '#706e6e';
+        var backColor = '#cc3333';
+        var textColor = '#0a95ff';
+
+        var tbody = obj.parentNode;
+        var trs = tbody.getElementsByTagName('tr');
+        for ( var i = 0; i < trs.length; i++ ) {
+            if ( trs[i] != obj ) {
+               trs[i].style.backgroundColor = orgBColor;
+               trs[i].style.color = orgTColor;
+            } else {
+                trs[i].style.backgroundColor = backColor;
+                trs[i].style.color = textColor;
+            }
+        }
+    }
+
+
+
+    function fnDateCompare(sDate, eDate, mType) {
+    	/*
+    	var da1 = new Date(sDate);
+        var da2 = new Date(eDate);
+        var dif = da2 - da1;
+        var cDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+        var cMonth = cDay * 30;// 월 만듬
+        var cYear = cMonth * 12; // 년 만듬
+
+    	if(mType =='year'){
+    		return parseInt(dif/cYear);
+    	} else if(mType =='month'){
+    		return parseInt(dif/cMonth);
+        } else if(mType =='day'){
+        	return parseInt(dif/cDay);
+        }
+     */
+    	 var strtDate = fnReplaceAll(sDate, "-", "");
+    	 var endDate = fnReplaceAll(eDate, "-", "");
+    	 var strtYear = parseInt(strtDate.substring(0,4));
+    	 var strtMonth = parseInt(strtDate.substring(4,6));
+    	 var endYear = parseInt(endDate.substring(0,4));
+    	 var endMonth = parseInt(endDate.substring(4,6));
+    	 var month = (endYear - strtYear)* 12 + (endMonth - strtMonth)+1;
+
+    	 return month;
+
+        //alert("["+parseInt(dif/cYear)+"]["+parseInt(dif/cMonth)+"]["+parseInt(dif/cDay)+"]");
+    }
+
+
+    function fnPaySelected(obj, groupNo, lectureNo, tuition, lectureStartDate, lectureEndDate){
+
+    	if(fnDateCompare(lectureStartDate, lectureEndDate, "month") == 0){
+            $("#discMonth").val("1").prop("selected", true);
+            $('#start_Dt').val(lectureStartDate);
+            $('#end_Dt').val(lectureEndDate);
+        } else if(fnDateCompare(lectureStartDate, lectureEndDate, "month") == 1){
+            $("#discMonth").val("2").prop("selected", true);
+            $('#start_Dt').val(lectureStartDate);
+            $('#end_Dt').val(lectureEndDate);
+        } else if(fnDateCompare(lectureStartDate, lectureEndDate, "month") == 2){
+            $("#discMonth").val("3").prop("selected", true);
+            $('#start_Dt').val(lectureStartDate);
+            $('#end_Dt').val(lectureEndDate);
+        } else {
+            $("#discMonth").val("3").prop("selected", true);
+            $('#start_Dt').val(lectureStartDate);
+            $('#end_Dt').val(lectureEndDate);
+        }
+    	let pAmt = tuition.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
+
+    	if($('#agencyRate').val() > 0){
+    		let calcAmt =  tuition * ($('#agencyRate').val()/100);
+    		pAmt = calcAmt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    		$('#pAmount').val(pAmt);
+        } else {
+        	$('#pAmount').val(pAmt);
+        }
+
+    	//$('#initAmount').val(pAmt);
+    	$("#calcGroupNo").val(groupNo);
+        $("#calcLectureNo").val(lectureNo);
+        $("#calcOrgPrice").val(fnReplaceAll(tuition, ",", ""));
+        $("#calcPayPrice").val(fnReplaceAll(pAmt, ",", ""));
+        $("#calcStartDt").val(lectureStartDate);
+        $("#calcEndDt").val(lectureEndDate);
+        $("#calcOrgStartDt").val(lectureStartDate);
+        $("#calcOrgEndDt").val(lectureEndDate);
+
+        var orgBColor = '#ffffff';
+        var orgTColor = '#706e6e';
+        var backColor = '#cc3333';
+        var textColor = '#0a95ff';
+
+        var tbody = obj.parentNode;
+        var trs = tbody.getElementsByTagName('tr');
+        for ( var i = 0; i < trs.length; i++ ) {
+            if ( trs[i] != obj ) {
+               trs[i].style.backgroundColor = orgBColor;
+               trs[i].style.color = orgTColor;
+            } else {
+                trs[i].style.backgroundColor = backColor;
+                trs[i].style.color = textColor;
+            }
+        }
+
+
+    }
+
+
+    function fnOldLectureSelected(obj, groupNo, lectureNo, targetCd) {
+    	//alert("["+groupNo+"]["+lectureNo+"]["+targetCd+"]");
+	    fnLectureSelected(obj, groupNo, lectureNo, targetCd, 'Y');
+    }
+
+    let lecturePrice = 0;
+    function fnLectureSelected(obj, groupNo, lectureNo, targetCd, reqYn) {
+
+    	if(reqYn == 'N'){
+    		alert('신청 마감되었습니다. 더 이상 신청할 수 없습니다.');
+    		return;
+    	}
+    	if(targetCd == 0 || targetCd == '0') {targetCd = "";}
+    	var formData = { groupNo :  groupNo, lectureNo : lectureNo, targetCd : targetCd};
+
+    	var autoCheck = "checked";
+    	if($("#checkAutoSel").val() == '0'){
+    		autoCheck = "";
+    		$("input[name=SelectAll]").prop("checked", false);
+    	} else {
+    		$("input[name=SelectAll]").prop("checked", true);
+    	}
+
+    	$.ajax({
+            type : 'post',
+            url : '/staff/selectMngrLectureTargetAjax.do',
+            data : formData,
+            dataType : 'json',
+            success : function(data){
+            	var dupFlag = true;
+            	let html = "";
+            	if(data.length > 0){
+            		const aTable = document.getElementById('payTargetList');
+
+                    let startDate;
+                    let endDate;
+                    $.each(data, function(index, item){
+                    	var lectureNo = item.lectureNo;
+                        var lectureNm = item.lectureNm;
+                        var groupNo = item.groupNo;
+                        var targetCdNm = item.targetCdNm;
+                        var tuition = item.tuition;
+                        var ableDayOfWeek = item.ableDayOfWeek;
+                        var weekNm = item.weekNm;
+                        var lectureTime =   item.lectureStartHour + ":" + item.lectureStartMinute + "~" + item.lectureEndHour + ":" + item.lectureEndMinute
+                        var lecturePeriod = item.lectureStartDate + "~" +  item.lectureEndDate;
+                        var trId = groupNo +"_"+ lectureNo;
+
+                        $("#pAmount").val(tuition.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                        //alert("["+item.lectureStartDate+"]["+item.lectureEndDate+"]"+fnDateCompare(item.lectureStartDate, item.lectureEndDate, "month"));
+                        if(fnDateCompare(item.lectureStartDate, item.lectureEndDate, "month") == 0){
+                        	$("#discMonth").val("1").prop("selected", true);
+                        } else if(fnDateCompare(item.lectureStartDate, item.lectureEndDate, "month") == 1){
+                        	$("#discMonth").val("2").prop("selected", true);
+                        } else if(fnDateCompare(item.lectureStartDate, item.lectureEndDate, "month") == 2){
+                        	$("#discMonth").val("3").prop("selected", true);
+                        } else {
+                        	$("#discMonth").val("0").prop("selected", true);
+                        }
+                        $('#start_Dt').val(item.lectureStartDate);
+                        $('#end_Dt').val(item.lectureEndDate);
+
+                        //$('#start_Dt').val(item.lectureStartDate);
+                        //$('#end_Dt').val(item.lectureEndDate);
+
+                        // alert($('#aTable >tbody tr').length);
+                        var aTableCount = aTable.rows.length;
+
+                        if(!fnDupCheck(groupNo, lectureNo)){
+
+                           html += "<tr style='cursor:pointer;' id="+trId+" onclick=\"fnPaySelected(this, '"+groupNo+"','"+lectureNo+"', '"+tuition+"', '"+item.lectureStartDate+"', '"+item.lectureEndDate+"');\" ondblclick=\"fnLectureCancel(this, "+groupNo+", "+lectureNo+");\">";
+                           html += "<td><input type='checkbox' name='lectureChk' id='lectureChk"+trId+"' "+autoCheck+" class='check'/>";//</td>
+
+                           html += "<input type='hidden' name='groupNo' id='groupNo"+groupNo+"_"+lectureNo+"' value='"+groupNo+"' />";
+                           html += "<input type='hidden' name='lectureNo' id='lectureNo"+groupNo+"_"+lectureNo+"' value='"+lectureNo+"' />";
+                           html += "<input type='hidden' name='lectureStartDate' id='lectureStartDate"+groupNo+"_"+lectureNo+"' value='"+item.lectureStartDate+"' />";
+                           html += "<input type='hidden' name='lectureEndDate' id='lectureEndDate"+groupNo+"_"+lectureNo+"' value='"+item.lectureEndDate+"' />";
+                           html += "<input type='hidden' name='orgPrice' id='orgPrice"+groupNo+"_"+lectureNo+"' value='"+tuition+"' />";
+                           html += "<input type='hidden' name='payPrice' id='payPrice"+groupNo+"_"+lectureNo+"' value='"+tuition+"' />";
+                           html += "<input type='hidden' name='retakeYn' id='retakeYn"+groupNo+"_"+lectureNo+"' value='N' />";
+
+                           html += "</td>";
+                           html += "<td>"+lectureNm+"</td>";
+                           html += "<td class='text_right'>"+lecturePeriod+"</td>";
+                           html += "<td>"+weekNm+"("+lectureTime+")</td>";
+                           html += "<td class='text_center'>"+targetCdNm+"</td>";
+                           html += "<td class='text_right'></td>";
+                           html += "</tr>";
+
+                           lecturePrice += tuition;
+                           dupFlag = false;//중복없음
+                        }
+                    });
+
+                    if(!dupFlag){
+                    	$("#payTargetList").append(html);
+                        $("#payTargetList").show();
+                    }
+                    let payAmount = 0;
+                    $("input[name='lectureChk']").each(function(){
+                        var checked = $(this).prop('checked');
+                        tid =  fnReplaceAll($(this).attr("id"),"lectureChk", "" ) ;
+
+                        if(checked){
+                        	payAmount += Number($("#payPrice"+tid).val());
+
+                        }
+                    });
+                    $("#initAmount").val(payAmount);
+                    $("#payAmount").val(payAmount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else {
+                    alert('수강정보가 존재하지 않습니다.');
+                }
+
+            },
+            error: function(xhr, status, error){
+
+            }
+
+        });
+
+    	var orgBColor = '#ffffff';
+        var orgTColor = '#706e6e';
+        var backColor = '#CEECF5';//#cc3333
+        var textColor = '#848484';//#0a95ff
+
+        var tbody = obj.parentNode;
+        var trs = tbody.getElementsByTagName('tr');
+        for ( var i = 0; i < trs.length; i++ ) {
+            if ( trs[i] != obj ) {
+               trs[i].style.backgroundColor = orgBColor;
+               trs[i].style.color = orgTColor;
+            } else {
+                trs[i].style.backgroundColor = backColor;
+                trs[i].style.color = textColor;
+            }
+        }
+    }
+
+
+    function fnPayAmountModify(obj) {
+    	/*
+        let calcGroupNo = $('#calcGroupNo').val();
+        let calcLectureNo = $('#calcLectureNo').val();
+        let calcPayPrice = fnReplaceAll($('#calcPayPrice').val(), ",", "");
+        let calcOrgPrice = fnReplaceAll($('#calcOrgPrice').val(), ",", "");
+        let calcStartDt = $('#calcStartDt').val();
+        let calcEndDt = $('#calcEndDt').val();
+        let calcOrgStartDt = $('#calcOrgStartDt').val();
+        let calcOrgEndDt = $('#calcOrgEndDt').val();
+        */
+
+        let pAmount = fnReplaceAll($('#pAmount').val(), ",", "") ;
+        let payAmount = 0;
+        if(confirm("선택된 항목에 항목에 변경된 금액이 일괄적용됩니다.\n\n금액변경 후 최종금액이 1원단위가 나올경우 10원으로 올림하여 처리합니다.\n\n적용하시겠습까?")){
+
+        	$("input[name='lectureChk']").each(function(){
+                var checked = $(this).prop('checked');
+                tid =  fnReplaceAll($(this).attr("id"),"lectureChk", "" ) ;
+
+                if(checked){
+                	$("#payPrice"+tid).val(pAmount);
+                	payAmount += Number(pAmount);
+                }
+            });
+        }
+        $("#payAmount").val(payAmount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+
+    }
+
+    function fnPayAmountModify_bak(obj) {
+        let tid = "";
+
+        if(confirm("선택된 항목에 항목에 변경된 금액이 일괄적용됩니다.\n\n금액변경 후 최종금액이 1원단위가 나올경우 10원으로 올림하여 처리합니다.\n\n적용하시겠습까?")){
+             $("input[name='lectureChk']").each(function(){
+                 var checked = $(this).prop('checked');
+                 tid =  fnReplaceAll($(this).attr("id"),"lectureChk", "" ) ;
+
+                 if(checked){
+                     var td = document.getElementById(tid).getElementsByTagName('td')[2];
+                     td.firstChild.nodeValue=$('#start_Dt').val() + "~" + $('#end_Dt').val();
+                 }
+             });
+             $('#paramDiscStartDate').val($('#start_Dt').val());
+             $('#paramDiscEndDate').val($('#end_Dt').val());
+        }
+        $('#payAmount').val($('#pAmount').val());
+
+    }
+
+
+
+    function fnDiscMonthChange(obj) {
+    	if(obj.value == 0){
+    		return;
+    	}
+
+    	if($('#calcGroupNo').val() == '' || $('#calcLectureNo').val() == ''){
+    		alert("개월 수 변경할 강좌를 선택하여 주십시오.");
+    		return;
+    	}
+
+    	let calcGroupNo = $('#calcGroupNo').val();
+        let calcLectureNo = $('#calcLectureNo').val();
+        let calcPayPrice = fnReplaceAll($('#calcPayPrice').val(), ",", "");
+        let calcOrgPrice = fnReplaceAll($('#calcOrgPrice').val(), ",", "");
+        let calcStartDt = $('#calcStartDt').val();
+        let calcEndDt = $('#calcEndDt').val();
+        let calcOrgStartDt = $('#calcOrgStartDt').val();
+        let calcOrgEndDt = $('#calcOrgEndDt').val();
+
+        let tdId = calcGroupNo+"_"+calcLectureNo;
+
+    	if(confirm("선택된 항목에 개월수/시작일자/종료일자 변경이 일괄 적용됩니다.\n* 개월수 변경 : 해당개월수 만큼 금액 할인\n* 시작일자 : 일자만 변경(금액무관)\n* 종료일자 : 일자만 변경(금액무관)\n\n변경하시겠습니까?")){
+    		const newDate = new Date($('#calcOrgEndDt').val());
+    		let lecMonth = fnDateCompare($('#calcOrgStartDt').val(), $('#calcOrgEndDt').val(), "month");//개월수 계산
+    		let amt = 0;
+    		let startMonth = 0;
+
+    	    let pAmount = fnReplaceAll( $("#orgPrice"+tdId).val(), ",", "" );
+
+            if(lecMonth >= 3){
+            	 if(obj.value == 1) {
+            		 amt = pAmount/3;
+            		 startMonth = 0;
+            	 } else if (obj.value == 2){
+            		 amt = pAmount/3;
+            		 amt = amt + amt;
+            		 startMonth = 1;
+            	 } else {
+            		 amt = pAmount;
+            		 startMonth =-1;
+            	 }
+            } else if(lecMonth == 2){
+                if(obj.value == 1) {
+                    amt = pAmount/2;
+                    startMonth = 0;
+                } else if (obj.value == 3){
+                    amt = pAmount/2;
+                    amt = amt*3;
+                    startMonth = 2;
+                } else {
+                    amt = pAmount;
+                    startMonth =-1;
+                }
+           } else {
+        	   if(obj.value == 2) {
+                   amt = pAmount*2;
+                   startMonth = 1;
+               } else if (obj.value >= 3){
+                   amt = pAmount*3;
+                   startMonth = 2;
+               } else {
+                   amt = pAmount;
+                   startMonth =-1;
+               }
+           }
+
+          // alert("lecMonth:["+lecMonth+"]["+obj.value+"]["+amt+"]");
+          if(startMonth >=0){
+        	  newDate.setMonth(newDate.getMonth() - startMonth);
+        	  $('#start_Dt').val(newDate.toISOString().substring(0,7)+"-01");
+        	  $("#lectureStartDate"+tdId).val($('#start_Dt').val());
+          } else {
+              $('#start_Dt').val(calcOrgStartDt);
+          }
+
+
+          if($('#agencyRate').val() > 0){
+        	   amt=  amt * ($('#agencyRate').val()/100);
+          }
+          amt = Math.round(amt / 10) * 10;
+
+          // alert("lecMonth:["+lecMonth+"]["+obj.value+"]["+amt+"]");
+          $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+          $("#payPrice"+tdId).val(amt);
+          let payTotAmount = 0;
+          let payAmount = 0;
+          $("input[name='lectureChk']").each(function(){
+              var checked = $(this).prop('checked');
+              tid =  fnReplaceAll($(this).attr("id"),"lectureChk", "" ) ;
+
+              if(checked){
+            	  payAmount = $("#payPrice"+tid).val();
+            	  alert("payTotAmount["+payTotAmount+"]");
+            	  payTotAmount += Number(payAmount);
+                  var td = document.getElementById(tid).getElementsByTagName('td')[2];
+                  td.firstChild.nodeValue=$('#start_Dt').val() + "~" + $('#end_Dt').val();
+              }
+          });
+          $("#payAmount").val(payTotAmount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+
+
+    	}
+    }
+
+    function fnDiscountCalc(obj) {
+        if(obj.value == 0){
+            return;
+        }
+
+        if( $("#userId").val() == ''){
+            alert('회원을 선택하여 주십시오.');
+            return;
+        }
+
+        if($('#calcGroupNo').val() == '' || $('#calcLectureNo').val() == ''){
+            alert("할인 유형을 변경 할 강좌를 선택하여 주십시오.");
+            return;
+        }
+
+        let calcGroupNo = $('#calcGroupNo').val();
+        let calcLectureNo = $('#calcLectureNo').val();
+        let calcPayPrice = fnReplaceAll($('#calcPayPrice').val(), ",", "");
+        let calcOrgPrice = fnReplaceAll($('#calcOrgPrice').val(), ",", "");
+        let calcStartDt = $('#calcStartDt').val();
+        let calcEndDt = $('#calcEndDt').val();
+        let calcOrgStartDt = $('#calcOrgStartDt').val();
+        let calcOrgEndDt = $('#calcOrgEndDt').val();
+
+        let tdId = calcGroupNo+"_"+calcLectureNo;
+
+        if(confirm("선택된 항목에 개월수/시작일자/종료일자 변경이 일괄 적용됩니다.\n* 개월수 변경 : 해당개월수 만큼 금액 할인\n* 시작일자 : 일자만 변경(금액무관)\n* 종료일자 : 일자만 변경(금액무관)\n\n변경하시겠습니까?")){
+            const newDate = new Date($('#calcOrgEndDt').val());
+            let lecMonth = fnDateCompare($('#calcOrgStartDt').val(), $('#calcOrgEndDt').val(), "month");//개월수 계산
+            let amt = 0;
+            let startMonth = 0;
+
+            let pAmount = fnReplaceAll( $("#orgPrice"+tdId).val(), ",", "" );
+
+            if(lecMonth >= 3){
+                 if(obj.value == 1) {
+                     amt = pAmount/3;
+                     startMonth = 0;
+                 } else if (obj.value == 2){
+                     amt = pAmount/3;
+                     amt = amt + amt;
+                     startMonth = 1;
+                 } else {
+                     amt = pAmount;
+                     startMonth =-1;
+                 }
+            } else if(lecMonth == 2){
+                if(obj.value == 1) {
+                    amt = pAmount/2;
+                    startMonth = 0;
+                } else if (obj.value == 3){
+                    amt = pAmount/2;
+                    amt = amt*3;
+                    startMonth = 2;
+                } else {
+                    amt = pAmount;
+                    startMonth =-1;
+                }
+           } else {
+               if(obj.value == 2) {
+                   amt = pAmount*2;
+                   startMonth = 1;
+               } else if (obj.value >= 3){
+                   amt = pAmount*3;
+                   startMonth = 2;
+               } else {
+                   amt = pAmount;
+                   startMonth =-1;
+               }
+           }
+
+          // alert("lecMonth:["+lecMonth+"]["+obj.value+"]["+amt+"]");
+          if(startMonth >= 0){
+              newDate.setMonth(newDate.getMonth() - startMonth);
+              $('#start_Dt').val(newDate.toISOString().substring(0,7)+"-01");
+              //$("#lectureStartDate"+tdId).val($('#start_Dt').val());
+          } else {
+        	  $('#start_Dt').val(calcOrgStartDt);
+          }
+
+          if($('#agencyRate').val() > 0){
+              amt=  amt * ($('#agencyRate').val()/100);
+          }
+          amt = Math.round(amt / 10) * 10;
+          // alert("lecMonth:["+lecMonth+"]["+obj.value+"]["+amt+"]");
+          $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+
+
+
+            //$('#calcGroupNo').val('');
+            //$('#calcLectureNo').val('');
+            //$('#calcPayPrice').val(0);
+            //$('#calcStartDt').val('');
+            //$('#calcEndDt').val('');
+        }
+    }
+
+    function fnDiscMonthChange_bak(obj) {
+        if(obj.value == 0){
+            return;
+        }
+
+        if($('#calcGroupNo').val() == '' || $('#calcLectureNo').val() == ''){
+            alert("개월 수 변경할 강좌를 선택하여 주십시오.");
+            return;
+        }
+
+        if(confirm("선택된 항목에 개월수/시작일자/종료일자 변경이 일괄 적용됩니다.\n* 개월수 변경 : 해당개월수 만큼 금액 할인\n* 시작일자 : 일자만 변경(금액무관)\n* 종료일자 : 일자만 변경(금액무관)\n\n변경하시겠습니까?")){
+            const newDate = new Date($('#calcEndDt').val());
+            let lecMonth = fnDateCompare($('#calcStartDt').val(), $('#calcEndDt').val(), "month");//개월수 계산
+            let amt = 0;
+            let startMonth = 0;
+            let pAmount = fnReplaceAll( $('#pAmount').val(),",", "" );
+            //alert("pAmount:["+lecMonth+"]["+pAmount+"]");
+            if(obj.value == 1){//1개월 선택(같은 월)
+                if(lecMonth == 2){//2개월 강좌(3월 ~ 4월 ), 0은 같은 월
+                    amt = pAmount/2;
+                } else if(lecMonth == 3){//3개월 강좌
+                    amt = pAmount/3;
+                } else {//정보변화없음
+                    amt = fnReplaceAll( $('#pAmount').val(),",", "" );
+                }
+                startMonth = 0;
+
+            } else if(obj.value == 2){//2개월 선택(1개월, 예)3월~4월)
+                if(lecMonth == 3){
+                    amt=(pAmount/3)*2;
+                } else {
+                    //정보변화없음
+                    amt = fnReplaceAll( $('#pAmount').val(),",", "" );
+                }
+                startMonth = 1;
+            } else if(obj.value == 3){//3개월 선택
+                $('#pAmount').val(pAmount);
+                startMonth = 2;
+            } else {
+                $('#pAmount').val(pAmount);
+            }
+
+            newDate.setMonth(newDate.getMonth() - startMonth);
+            $('#start_Dt').val(newDate.toISOString().substring(0,7)+"-01");
+
+            amt = Math.round(amt / 10) * 10;
+            $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+
+
+            let calcGroupNo = $('#calcGroupNo').val();
+            let calcLectureNo = $('#calcLectureNo').val();
+            let lectureStartDateId = calcGroupNo+"_"+calcLectureNo;
+
+            $("#lectureStartDate"+lectureStartDateId).val($('#start_Dt').val());
+            $("#payPrice"+lectureStartDateId).val(amt);
+
+            //$('#calcGroupNo').val('');
+            //$('#calcLectureNo').val('');
+            //$('#calcPrice').val(0);
+            //$('#calcStartDt').val('');
+            //$('#calcEndDt').val('');
+        }
+    }
+
+
+    function fnDiscMonthChange_bak(obj) {
+        if(confirm("선택된 항목에 개월수/시작일자/종료일자 변경이 일괄 적용됩니다.\n* 개월수 변경 : 해당개월수 만큼 금액 할인\n* 시작일자 : 일자만 변경(금액무관)\n* 종료일자 : 일자만 변경(금액무관)\n\n변경하시겠습니까?")){
+            const newDate = new Date($('#end_Dt').val());
+            let cMonth = fnDateCompare($('#start_Dt').val(), $('#end_Dt').val(), "month");//개월수 계산
+            let amt = 0;
+            let tamt = Math.round(4999.909 / 10) * 10;
+            alert(tamt);
+            if(obj.value == 1){//1개월 선택
+                if(cMonth == 1){
+                    amt = $('#initAmount').val()/2;
+                    amt = Math.round(amt / 10) * 10;
+                    $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+               } else if(cMonth == 2){
+                     let amt = $('#initAmount').val()/3;
+                     $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else if(cMonth == 3){
+                    let amt = $('#initAmount').val()/3;
+                    $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else {//정보변화없음
+                    $('#pAmount').val();
+                }
+
+                newDate.setMonth(newDate.getMonth() - 0);
+                $('#start_Dt').val(newDate.toISOString().substring(0,7)+"-01");
+
+            } else if(obj.value == 2){//2개월 선택
+
+                if(cMonth == 0){
+                     let amt = $('#initAmount').val()*2;
+                     $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else if(cMonth == 2){
+                    let amt = $('#initAmount').val()/2;
+                    $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else if(cMonth >= 3){
+                    let amt = $('#initAmount').val()/2;
+                    $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else {
+                    //정보변화없음
+                    $('#pAmount').val();
+                }
+
+                newDate.setMonth(newDate.getMonth() - 1);
+                $('#start_Dt').val(newDate.toISOString().substring(0,7)+"-01");
+
+            } else if(obj.value == 3){//3개월 선택
+
+                if(cMonth == 0){
+                     let amt = $('#initAmount')*3;
+                     $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else if(cMonth == 1){
+                    let amt = $('#initAmount')*2;
+                    $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else if(cMonth >= 2){
+                    let amt = $('#initAmount')*2;
+                    $('#pAmount').val(amt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+                } else {
+                    //정보변화없음
+                    $('#pAmount').val();
+                }
+                newDate.setMonth(newDate.getMonth() - 2);
+                $('#start_Dt').val(newDate.toISOString().substring(0,7)+"-01");
+            } else {
+
+            }
+        }
+    }
+
+    function fnDupCheck(groupNo, lectureNo) {
+      var chkValue = groupNo + "_" + lectureNo;
+      let tid ="";
+      let returnBoolean = false;
+      $('#payTargetList tr').each(function(){
+    	 tid =  $(this).attr("id");
+    	 if(chkValue == tid){
+             returnBoolean = true;
+         }
+      });
+      if(returnBoolean){
+    	  alert("이미 등록되었습니다.");
+    	  return true;
+      } else {
+    	  return false;
+      }
+
+	}
+
+    function fnLectureCancel(obj, groupNo, lectureNo) {
+        //alert(groupNo + " _ " + lectureNo);
+
+         //var trs = document.getElementById(groupNo+"_"+lectureNo);
+        //alert(trs.value);
+
+         /*
+    	 var chkList = document.querySelectorAll(".check");
+         for(var i=0; i< chkList.length ; i++){
+             if(chkList[i].checked){
+                 chkList[i].parentElement.parentElement.remove();
+             }
+         }*/
+    }
+
+    function fnRe_register(obj) {
+          // alert($('#hUserId').val());
+        // alert(oldLectureInfo);
+        var userId = $('#hUserId').val();
+        var groupNo = $('#hGroupNo').val();
+        var lectureNo = $('#hLectureNo').val();
+        var lectureReceiptNo = $('#hLectureReceiptNo').val();
+        var targetCd = $('#hTargetCd').val();
+
+        fnLectureSelected(obj, groupNo, lectureNo, targetCd, 'Y') ;
+    }
+
+
+    function fnLectureChange(obj) {
+
+    	if($('#hUserId').val() == ''){
+    		alert('회원을 선택하여 주십시오.');
+    		return;
+    	}
+
+    	if($('#hLectureNo').val() == ''){
+            alert('접수 강좌를 선택하여 주십시오.');
+            return;
+        }
+
+    	var modal = document.getElementById('setLectureModal');
+        if (modal.style.display === "block") {
+            modal.style.display = "none";
+        } else {
+            modal.style.display = "block";
+        }
+
+        var userId = $('#hUserId').val();
+        var groupNo = $('#hGroupNo').val();
+        var lectureNo = $('#hLectureNo').val();
+        var lectureReceiptNo = $('#hLectureReceiptNo').val();
+        var targetCd = $('#hTargetCd').val();
+        var eduPlaceNo = $('#hEduPlaceNo').val();
+
+       // alert("userId:"+userId);
+    	var key = 759;
+        $(this).modalRemotePop({
+            target : "#setLectureModal",
+            remote : "./selectMngrLectureChangeForm.do?key="+key+"&groupNo="+groupNo+"&lectureNo="+lectureNo+"&userId="+userId+"&lectureReceiptNo="+lectureReceiptNo+"&targetCd="+targetCd+"&eduPlaceNo="+eduPlaceNo,
+            container : "#setLectureModal",
+            width : "1100px",
+            height : "500px",
+            parentbtn : obj
+        });
+    }
+
+
+    function fnLectureSelectedDelete(){
+
+        var chkList = document.querySelectorAll(".check");
+        for(var i=0; i< chkList.length ; i++){
+        	if(chkList[i].checked){
+        		chkList[i].parentElement.parentElement.remove();
+        	}
+        }
+
+        chkList = document.querySelectorAll(".check");
+        for(var i=0; i< chkList.length ; i++){
+            if(chkList[i].checked){
+                chkList[i].parentElement.parentElement.remove();
+            }
+        }
+
+        if(chkList.length == 0){
+        	$("#pAmount").val(0);
+        	$("#payAmount").val(0);
+        }
+     }
+
+    function allChecked(){
+
+        //전체 체크박스 버튼
+        const checkbox = document.getElementById('SelectAll');
+
+        //전체 체크박스 버튼 체크 여부
+        const is_checked = checkbox.checked;
+
+        //전체 체크박스 제외한 모든 체크박스
+        if(is_checked){
+            //체크박스 전체 체크
+            chkAllChecked(checkbox);
+        } else {
+            //체크박스 전체 해제
+            chkAllUnChecked();
+        }
+    }
+
+    function chkAllChecked(checkbox){
+
+    	$("input[name='lectureChk']").each(function(){
+
+    		$("input[name=lectureChk]").prop("checked", true);
+
+        });
+    }
+
+    function chkAllUnChecked(){
+    	$("input[name='lectureChk']").each(function(){
+
+            $("input[name=lectureChk]").prop("checked", false);
+
+        });
+    }
+
+    // 전화번호 입력 20240807
+    function validateNumber(input) {
+        //input.value = input.value.replace(/[^0-9-]/g, '');
+        let value = input.value.replace(/[^0-9]/g, '');
+        let result = '';
+
+        if (value.length < 4) {
+            result = value;
+        } else if (value.length < 7) {
+            result = value.slice(0, 3) + '-' + value.slice(3);
+        } else if (value.length < 11) {
+            result = value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6);
+        } else {
+            result = value.slice(0, 3) + '-' + value.slice(3, 7) + '-' + value.slice(7, 11);
+        }
+
+        input.value = result;
+    }
+
+    //전화번호 입력 초기화
+    function resetValue(input){
+        input.value='';
+    }
+
+    $(document).ready(function() {
+
+    	var key = 759;
+        $(".payCash").click(function (e) {
+
+        	 //$(".modal-content").load("/staff/selectMngrAllInOneCashForm.do?key="+key+"&groupNo=8&lectureNo=28&lectureReceiptNo=153");
+
+        	   let lectureInfo="";
+
+        	   $("input[name='lectureChk']").each(function(){
+                   var checked = $(this).prop('checked');
+
+                   if(checked){
+                       lectureInfo += fnReplaceAll($(this).attr("id"),"lectureChk", "" ) + "|";
+                   }
+               });
+
+        	   lectureInfo=   lectureInfo.substr(0, lectureInfo.length - 1);
+
+        	    $("#paramLectureList").val(lectureInfo);
+        	    $("#paramPayAmount").val(fnReplaceAll($("#payAmount").val(), ",", ""));
+        	    $("#paramAgencyRateCd").val($("#agencyRate option:selected").val());
+        	    $("#paramDiscMonth").val($("#discMonth option:selected").val());
+        	    $("#paramDiscStartDate").val($("#start_Dt").val());
+        	    $("#paramDiscEndDate").val($("#end_Dt").val());
+        	    //$("input[name='discMonth']").val();
+        	    $("#paramUserId").val($("#userId").val());
+
+        	    if( $("#paramLectureList").val() == ''){
+        	    	  alert('결제할 강좌가 존재하지 않습니다.');
+        	    	  return;
+        	    }
+
+        	    if( $("#paramUserId").val() == ''){
+                    alert('회원을 선택하여 주십시오.');
+                    return;
+                }
+        	    if( $("#paramPayAmount").val() == 0 || $("#paramPayAmount").val() == '' ){
+                    alert('결제예정금액을 입력하여 주십시오.');
+                    return;
+                }
+        	    var pop_title = "payCash" ;
+        	    var _width = '650';
+        	    var _height = '380';
+
+        	    var _left = Math.ceil(( window.screen.width - _width )/2);
+        	    var _top = Math.ceil(( window.screen.height - _height )/2);
+
+
+                window.open("", pop_title, "toolbar=no, width="+_width+", height="+_height+", directories=no, status=no, left="+_left+", top="+_top+",  scrollorbars=no, resizable=no") ;
+
+                var key = 759;
+                var frmData = document.payform ;
+                frmData.target = pop_title ;
+                frmData.action = "./selectMngrAllInOneCashForm.do?key="+759 ;
+                frmData.method="post";
+                frmData.submit() ;
+
+        });
+        //init_orderid();
+        $(".payCard").click(function (e) {
+
+        	//$(".modal-content").load("/staff/selectMngrAllInOneCashForm.do?key="+key+"&groupNo=8&lectureNo=28&lectureReceiptNo=153");
+
+            let lectureInfo="";
+
+            $("input[name='lectureChk']").each(function(){
+                var checked = $(this).prop('checked');
+
+                if(checked){
+                    lectureInfo += fnReplaceAll($(this).attr("id"),"lectureChk", "" ) + "|";
+                }
+            });
+
+            lectureInfo=   lectureInfo.substr(0, lectureInfo.length - 1);
+
+            $("#paramLectureList").val(lectureInfo);
+            $("#paramPayAmount").val(fnReplaceAll($("#payAmount").val(), ",", ""));
+            $("#paramAgencyRateCd").val($("#agencyRate option:selected").val());
+            $("#paramDiscMonth").val($("#discMonth option:selected").val());
+            $("#paramDiscStartDate").val($("#start_Dt").val());
+            $("#paramDiscEndDate").val($("#end_Dt").val());
+            //$("input[name='discMonth']").val();
+
+            $("#paramUserId").val($("#userId").val());
+
+
+            if( $("#paramLectureList").val() == ''){
+                alert('결제할 강좌가 존재하지 않습니다.');
+                return;
+            }
+
+            if( $("#paramUserId").val() == ''){
+                alert('회원을 선택하여 주십시오.');
+                return;
+            }
+            if( $("#paramPayAmount").val() == 0 || $("#paramPayAmount").val() == '' ){
+                alert('결제예정금액을 입력하여 주십시오.');
+                return;
+            }
+            var pop_title = "payCash" ;
+            var _width = '650';
+            var _height = '380';
+
+            var _left = Math.ceil(( window.screen.width - _width )/2);
+            var _top = Math.ceil(( window.screen.height - _height )/2);
+
+            window.open("", pop_title, "toolbar=no, width="+_width+", height="+_height+", directories=no, status=no, left="+_left+", top="+_top+",  scrollorbars=no, resizable=no") ;
+
+            var key = 759;
+            var frmData = document.payform ;
+            frmData.target = pop_title ;
+            frmData.action = "./selectMngrAllInOneCardForm.do?key="+759 ;
+            frmData.method="post";
+            frmData.submit() ;
+        });
+
+        $(".payVAccount").click(function (e) {
+            let lectureInfo="";
+
+            $("input[name='lectureChk']").each(function(){
+                var checked = $(this).prop('checked');
+
+                if(checked){
+                    lectureInfo += fnReplaceAll($(this).attr("id"),"lectureChk", "" ) + "|";
+                }
+            });
+
+            lectureInfo=   lectureInfo.substr(0, lectureInfo.length - 1);
+
+            $("#paramLectureList").val(lectureInfo);
+            $("#paramPayAmount").val(fnReplaceAll($("#payAmount").val(), ",", ""));
+            $("#paramAgencyRateCd").val($("#agencyRate option:selected").val());
+            $("#paramDiscMonth").val($("#discMonth option:selected").val());
+            $("#paramDiscStartDate").val($("#start_Dt").val());
+            $("#paramDiscEndDate").val($("#end_Dt").val());
+            //$("input[name='discMonth']").val();
+
+            $("#paramUserId").val($("#userId").val());
+
+
+            if( $("#paramLectureList").val() == ''){
+                alert('결제할 강좌가 존재하지 않습니다.');
+                return;
+            }
+
+            if( $("#paramUserId").val() == ''){
+                alert('회원을 선택하여 주십시오.');
+                return;
+            }
+            if( $("#paramPayAmount").val() == 0 || $("#paramPayAmount").val() == '' ){
+                alert('결제예정금액을 입력하여 주십시오.');
+                return;
+            }
+            var pop_title = "payVAccount" ;
+            var _width = '800';
+            var _height = '680';
+
+            var _left = Math.ceil(( window.screen.width - _width )/2);
+            var _top = Math.ceil(( window.screen.height - _height )/2);
+
+            window.open("", pop_title, "toolbar=no, width="+_width+", height="+_height+", directories=no, status=no, left="+_left+", top="+_top+",  scrollorbars=no, resizable=no") ;
+
+            var key = 759;
+            var frmData = document.payform ;
+            frmData.target = pop_title ;
+            frmData.action = "./selectMngrAllInOneVAccountForm.do?key="+759 ;
+            frmData.method="post";
+            frmData.submit() ;
+        });
+
+
+        $('#updateBtn').on('click', function(){
+            location.href = '/neo/updateMngrLectureReceiptView.do?lectureNo=' + $('#lectureNo').val() + '&lectureReceiptNo=' + $('#lectureReceiptNo').val()+ '&groupNo=' + $('#groupNo').val();
+        });
+
+
+        $(".payRefund").click(function (e) {
+
+
+            if( $("#hUserId").val() == ''){
+                alert('회원을 선택하여 주십시오.');
+                return;
+            }
+
+            var pop_title = "payRefund" ;
+            var _width = '850';
+            var _height = '680';
+
+            var _left = Math.ceil(( window.screen.width - _width )/2);
+            var _top = Math.ceil(( window.screen.height - _height )/2);
+
+
+            window.open("", pop_title, "toolbar=no, width="+_width+", height="+_height+", directories=no, status=no, left="+_left+", top="+_top+",  scrollorbars=no, resizable=no") ;
+
+            var key = 759;
+            var frmData = document.hform ;
+            frmData.target = pop_title ;
+            frmData.action = "./selectMngrAllInOneRefundForm.do";
+            frmData.method="post";
+            frmData.submit() ;
+
+       });
+
+    });
+
+
+
+</script>
+<form name="calcForm" id="calcForm">
+<input type="text" name="calcGroupNo" id="calcGroupNo" value=""/>
+<input type="text" name="calcLectureNo" id="calcLectureNo" value=""/>
+<input type="text" name="calcPayPrice" id="calcPayPrice" value="0"/>
+<input type="text" name="calcOrgPrice" id="calcOrgPrice" value="0"/>
+<input type="text" name="calcOrgStartDt" id="calcOrgStartDt" value=""/>
+<input type="text" name="calcOrgEndDt" id="calcOrgEndDt" value=""/>
+
+</form>
+<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

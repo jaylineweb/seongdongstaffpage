@@ -1,0 +1,669 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="title" content="직원페이지" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="/common/css/font.css" />
+    <link rel="stylesheet" href="/common/css/default.css" />
+    <link rel="stylesheet" href="/site/staff/css/common.css" />
+    <link rel="stylesheet" href="/site/staff/css/program.css" />
+    <!--[if lt IE 9]><script src="/common/js/html5.js"></script><![endif]-->
+    <script src="/common/js/jquery-1.12.4.HS-20200709.min.js"></script>
+    <title>직원페이지</title>
+</head>
+<body class="staff">
+<header class="header">
+    <div class="wrap clearfix">
+        <h1 class="header__logo">프로그램 관리</h1>
+        <div class="header__title">
+            <!-- $page-heading-->
+        </div>
+        <div class="gnb">
+            <span class="gnb__name">관리자</span>님
+            <a href="/logout.do?mode=LOGIN&amp;rurl=/staff/index.do" class="gnb__logout" title="로그아웃">로그아웃 </a>
+        </div>
+    </div>
+</header>
+<div class="menu-list-wrap">
+    <h2 class="skip">주메뉴</h2>
+    <nav class="menu-list"  data-spy="affix" data-offset-top="0" data-longer="true" data-addaffix =".menu-list-wrap">
+
+
+
+
+
+
+<div class="menu-list-wrap">
+    <h2 class="skip">주메뉴</h2>
+    <nav class="menu-list"  data-spy="affix" data-offset-top="0" data-longer="true" data-addaffix =".menu-list-wrap">
+
+            <ul>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectLectureGroupList.do?key=742" class="menu-list__link" target="_self">강좌관리</a>
+
+            <ul class="submenu-list">
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLectureGroupList.do?key=742" class="submenu-list__link" target="_self">강좌그룹</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLectureList.do?key=743" class="submenu-list__link" target="_self">강좌목록</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrLectureAllInOneForm.do?key=759" class="submenu-list__link" title="새창" target="_blank">강좌접수</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectMngrCnclReqList.do?key=745" class="menu-list__link" target="_self">현황관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrCnclReqList.do?key=745" class="submenu-list__link" target="_self">가상계좌/무통장 취소현황</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrRefundList.do?key=746" class="submenu-list__link" target="_self">환불자명단</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectMngrDayPayList.do?key=747" class="submenu-list__link" target="_self">일일결제내역</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEtcList.do?key=751" class="menu-list__link" target="_self">기타수입관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectEtcList.do?key=751" class="submenu-list__link" target="_self">기타수입관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectEtcPaymentList.do?key=762" class="submenu-list__link" target="_self">기타수입현황</a>
+
+                        <ul>
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectEtcPaymentList.do?key=762" class="submenu-list__link" target="_self">결제내역</a>
+                                </li>
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectEtcReceiptList.do?key=763" class="submenu-list__link" target="_self">현황</a>
+                                </li>
+
+
+
+
+
+
+            </ul>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectLockerList.do?key=754" class="menu-list__link" target="_self">사물함대여관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerList.do?key=754" class="submenu-list__link" target="_self">사물함관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerRentalList.do?key=755" class="submenu-list__link" target="_self">사물함대여현황</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLockerPaymentList.do?key=765" class="submenu-list__link" target="_self">사물함결제내역</a>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectDiscountUserList.do?key=758" class="menu-list__link" target="_self">감면대상관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectDiscountUserList.do?key=758" class="submenu-list__link" target="_self">감면대상관리</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectDiscountRateList.do?key=760" class="submenu-list__link" target="_self">감면코드관리</a>
+
+                        <ul>
+
+
+
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectDiscountRateList.do?key=760" class="submenu-list__link" target="_self">감면코드관리</a>
+                                </li>
+
+
+
+                                    <li class="submenu-list__item">
+                                <a href="/staff/selectDiscountBaseList.do?key=761" class="submenu-list__link" target="_self">감면유형관리</a>
+                                </li>
+
+
+            </ul>
+
+        </li>
+
+
+
+
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item active">
+        <a href="/staff/selectLecturerList.do?key=740" class="menu-list__link" target="_self">강사관리</a>
+
+            <ul class="submenu-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li class="submenu-list__item">
+                    <a href="/staff/selectLecturerList.do?key=740" class="submenu-list__link" target="_self">강사목록</a>
+
+        </li>
+
+
+
+                        <li class="submenu-list__item active">
+                    <a href="/staff/selectMngrEducatorFeeList.do?key=741" class="submenu-list__link" target="_self">강사료</a>
+
+        </li>
+
+
+        </ul>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEduPlaceList.do?key=748" class="menu-list__link" target="_self">교육장관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectEduAgencyList.do?key=749" class="menu-list__link" target="_self">기관관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectQestnarMngList.do?key=57" class="menu-list__link" target="_self">설문조사관리</a>
+
+        </li>
+
+                    <li class="menu-list__item">
+        <a href="/staff/selectBbsMngList.do?key=51" class="menu-list__link" target="_self">게시판관리</a>
+
+        </li>
+
+        </ul>
+
+    </nav>
+    <!-- //lnb -->
+</div>
+
+    </nav>
+    <!-- //lnb -->
+</div>
+
+<div id="container">
+    <div class="wrap clearfix">
+        <main class="main">
+            <article>
+                <h2 class="contents-title">강사료</h2>
+                <div class="contents">
+                    <div class="p-wrap">
+                        <div class="row p-relative">
+                            <div class="col-6 margin_t_5">
+                                <span class="p-total__number">총 <em class="em_black" data-mask="#,##0" data-mask-reverse="true">13</em>건
+                                    &nbsp;[ <em class="em_b_black">1</em> / 2페이지 ]</span>
+                            </div>
+                            <div class="col-18 right">
+                                <form id="locker" name="searchForm" action="/staff/selectLockerList.do?key=754" method="get">
+                                    <fieldset>
+                                        <legend>사물함 검색</legend>
+                                        <input type="hidden" name="key" value="754">
+                                        <input id="searchKrwd" name="searchKrwd" placeholder="그룹명 입력" class="p-input p-input--auto" type="text" value="" data-listener-added_90adf352="true">
+                                        <button type="submit" class="p-button p-button--small primary">검색</button>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <table class="p-table p-table--bordered">
+                            <colgroup>
+                                <col style="width:5%;">
+                                <col style="width:10%;">
+                                <col style="width:39%;">
+                                <col style="width:10%;">
+                                <col style="width:10%;">
+                                <col style="width:16%;">
+                                <col style="width:10%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">기관분류</th>
+                                    <th scope="col">강좌 그룹명</th>
+                                    <th scope="col">노출여부</th>
+                                    <th scope="col">강좌수</th>
+                                    <th scope="col">등록일</th>
+                                    <th scope="col">강좌목록</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text_center">
+
+
+                                <tr id="row_13">
+                                    <td>N<input type="hidden" value="19" id="lockerNo1"></td>
+                                    <td>[기관명]</td>
+                                    <td>[ 등록한 그룹 명 출력 ]</td>
+                                    <td>
+                                        <div class="p-switcher">
+                                            <input id="switch14" type="checkbox" class="p-switcher__input" onclick="fnChangeUseYn('21', this);" checked="">
+                                            <label for="switch14" class="p-switcher__label"><em class="skip">텍스트 숨김</em></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        000
+                                    </td>
+                                    <td>yyyy-mm-dd</td>
+                                    <td>
+                                        <a href="" class="p-button p-button--small info">보기</a>
+                                    </td>
+                                </tr>
+                                <tr id="row_12">
+                                    <td>N-1<input type="hidden" value="16" id="lockerNo2"></td>
+                                    <td>구민대학 </td>
+                                    <td>2024년 여름학기(6~8월)</td>
+                                    <td>
+                                        <div class="p-switcher">
+                                            <input id="switch13" type="checkbox" class="p-switcher__input" onclick="fnChangeUseYn('20', this);" checked="">
+                                            <label for="switch13" class="p-switcher__label"><em class="skip">텍스트 숨김</em></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        179
+                                    </td>
+                                    <td>2024-05-02</td>
+                                    <td>
+                                        <a href="" class="p-button p-button--small info">보기</a>
+                                    </td>
+                                </tr>
+                                <tr id="row_11">
+                                    <td>N-2<input type="hidden" value="14" id="lockerNo3"></td>
+                                    <td>성동도서관</td>
+                                    <td>2024년 봄학기(3~5월)</td>
+                                    <td>
+                                        <div class="p-switcher">
+                                            <input id="switch12" type="checkbox" class="p-switcher__input" onclick="fnChangeUseYn('19', this);" checked="">
+                                            <label for="switch12" class="p-switcher__label"><em class="skip">텍스트 숨김</em></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        174
+                                    </td>
+                                    <td>2024-02-05</td>
+                                    <td>
+                                        <a href="" class="p-button p-button--small info">보기</a>
+                                    </td>
+                                </tr>
+                                <tr id="row_10">
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr id="row_9">
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr id="row_8">
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr id="row_7">
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr id="row_6">
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr id="row_5">
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr id="row_4">
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row margin_t_20">
+                            <div class="col-12">
+                                <div class="p-pagination left">
+                                    <div class="p-page">
+                                        <div class="p-page__control">
+                                            <a href="" class="p-page__link prev-end"><span class="skip">처음 페이지</span></a>
+                                            <a href="" class="p-page__link prev"><span class="skip">이전 10 페이지</span></a>
+                                            <a href="" class="p-page__link prev-one">이전 페이지</a>
+                                        </div>
+                                        <div class="p-page__link-group"><strong title="현재 1페이지" class="p-page__link active">1</strong><a href="" title="2페이지 이동" class="p-page__link ">2</a></div>
+                                        <div class="p-page__control"><a href="" class="p-page__link next-one">다음 페이지</a>
+                                            <a href="" class="p-page__link next">
+                                                <span class="skip">다음 10 페이지</span>
+                                            </a>
+                                            <a href="" class="p-page__link next-end">
+                                                <span class="skip">끝 페이지</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 right">
+                                <a href="" class="p-button write"><span>등록</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+
+                        function fnSearch(){
+                            var frmData = document.searchForm ;
+                            frmData.action = "./selectMngrEducatorFeeList.do?key=741";
+                            frmData.method="get";
+                            frmData.submit() ;
+                        }
+
+                        function fnExcelDownload(basicCode){
+                            var frmData = document.searchForm ;
+                            frmData.action = "./selectMngrEducatorFeeExcelList.do?key=741";
+                            frmData.method="get";
+                            frmData.submit() ;
+                        }
+
+                    </script>
+                </div>
+                <!-- //contents -->
+            </article>
+        </main>
+
+    </div>
+    <!-- //wrap -->
+</div>
+<!-- //container -->
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer_info">
+            <p>Copyright ⓒ 2005-2016 HANSHINIT. All RIGHTS RESERVED</p>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+
+<script src="/site/staff/js/script.js"></script>
+<script src="/common/js/program.js"></script>
+
+</body>
+</html>
